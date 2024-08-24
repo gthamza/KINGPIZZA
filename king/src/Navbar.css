@@ -1,0 +1,27 @@
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #212529;
+  }
+  
+  .logo {
+    margin-left: 10px;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 30px; 
+  }
+  
+  .nav-link {
+    color: white;
+  }
+  
+  .nav-link.active {
+    color: #f8f9fa; 
+  }
+  
