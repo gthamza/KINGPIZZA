@@ -7,7 +7,7 @@ function Footer() {
   return (
     <>
       <footer className="text-center text-lg-start text-white" style={{ backgroundColor: '#212121' }}>
-        <section className="d-flex justify-content-between p-4" style={{ backgroundColor: '#6351ce' }}>
+        <section className="d-flex justify-content-between p-4" style={{ backgroundColor: '#C92B5B' }}>
           <div className="me-5">
             <span>Get connected with us on social networks:</span>
           </div>

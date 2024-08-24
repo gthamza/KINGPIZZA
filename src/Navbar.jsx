@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from "./assets/logo.svg";
-import cart from "./assets/cart.png";
+import cart from "./assets/cart.svg";
 import './Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -16,7 +16,7 @@ function Navbar() {
         <li className="nav-item">
           <Link className="nav-link" to="/menu">MENU</Link>
         </li>
-        <li className="nav-item">
+        <li className="nav-item ">
           <Link className="nav-link" to="/about">ABOUT</Link>
         </li>
         <li className="nav-item">
