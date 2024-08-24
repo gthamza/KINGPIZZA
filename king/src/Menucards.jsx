@@ -9,7 +9,6 @@ import burger from './assets/burger.jpg';
 import cup from './assets/cup cakes.jpg';
 import roll from './assets/chicken rolls.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container } from 'react-bootstrap';
 
 function Menucards() {
   return (
