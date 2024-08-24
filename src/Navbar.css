@@ -15,13 +15,24 @@
     justify-content: center;
     flex-grow: 1;
     gap: 30px; 
+    color: #C92B5B;
   }
   
   .nav-link {
-    color: white;
+    color: #C92B5B;
+
   }
-  
-  .nav-link.active {
-    color: #f8f9fa; 
+  .nav-link:hover {
+    color: #A0224A; 
   }
-  
+  .nav .nav-link {
+    color: #C92B5B;
+}
+
+.nav .nav-link:hover {
+    color: #A0224A;
+}
+
+.nav .nav-link.active {
+    color: #f8f9fa;
+}
