@@ -1,0 +1,91 @@
+.container {
+    padding: 20px;
+    background-color: #212121;
+    cursor: pointer;
+  }
+  
+  .items-title {
+    color: #fff;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  .best-seller {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .best-seller-img {
+    background-color: #000000;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    width: 100%;
+  }
+  
+  .best-seller-img h6 {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .bestseller-container {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .wdp-ribbon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #C92B5B;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .wdp-ribbon-two {
+    background-color: #C92B5B;
+  }
+  
+  .rs-title {
+    font-size: 14px;
+  }
+  
+  .pkr-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .kfc-box span {
+    display: block;
+    background-color:#C92B5B;
+    height: 4px;
+    width: 100%;
+    margin: 2px 0;
+  }
+  
+  .saller-arrow {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  
+  .saller-arrow i {
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .best-seller {
+      flex-direction: column;
+    }
+  }
+  

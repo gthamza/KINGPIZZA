@@ -1,0 +1,137 @@
+/* General Container */
+.top-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .items-title {
+    color: #fff;
+    text-align: left;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .items-title span {
+    border-bottom: 5px solid #C92B5B;
+  }
+  
+  .borws-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  
+  .card {
+    background-color: #212121;
+    border: none;
+    border-radius: 0; 
+    padding: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .menu-card {
+    position: relative;
+  }
+  
+  .kfc-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  
+  .kfc-box span {
+    width: 10px;
+    height: 10px;
+    background-color: #C92B5B;
+    margin: 0 3px;
+  }
+  
+  .manu-img-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 0; 
+    object-fit: cover;
+  }
+  
+
+  .card-body {
+    color: #fff;
+    padding-top: 15px;
+  }
+  
+  .card-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .card-text {
+    font-size: 0.9rem;
+    color: #aaa;
+  }
+  
+  .kfc-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .price-label {
+    margin-top: 15px;
+  }
+  
+  .rgeister-btn {
+    background-color: #C92B5B;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 0; /* Removed rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .rgeister-btn:hover {
+    background-color: #C92B5B;
+  }
+  
+  .btn-item {
+    background: none;
+    border: none;
+    color: #C92B5B;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .rgeister-btn.Add-web {
+      display: none;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .rgeister-btn.Add-mobil {
+      display: none;
+    }
+  }
+
+ /* Ensure the card has no border-radius */
+.card {
+    border-radius: 0 !important;
+  }
+  
+  /* If you want to ensure the image does not have rounded corners either */
+  .card-img-top {
+    border-radius: 0 !important;
+  }
+  
+  /* If the card has any box-shadow or other styles affecting the shape, reset them as well */
+  .card-body {
+    border-radius: 0 !important;
+  }
+  

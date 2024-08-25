@@ -1,7 +1,9 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Footer.css';
-
+import fb from './assets/fb.svg';
+import yt from './assets/yt.svg';
+import insta from './assets/instagram.svg';
 
 function Footer() {
   return (
@@ -10,6 +12,16 @@ function Footer() {
         <section className="d-flex justify-content-between p-4" style={{ backgroundColor: '#C92B5B' }}>
           <div className="me-5">
             <span>Get connected with us on social networks:</span>
+            
+          </div>
+          <div className="fb-logo">
+         <img src={fb} alt='fb'></img>
+          </div>
+          <div className="insta-logo">
+         <img src={insta} alt='insta'></img>
+          </div>
+          <div className="yt-logo">
+         <img src={yt} alt='yt'></img>
           </div>
           <div>
             <a href="/" className="text-white me-4">
@@ -39,20 +51,16 @@ function Footer() {
             <div className="row mt-3">
               {/* Grid column */}
               <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                <h6 className="text-uppercase fw-bold">Company name</h6>
+                <h6 className="text-uppercase fw-bold">MR PIZZA</h6>
                 <hr className="mb-4 mt-0 d-inline-block mx-auto" style={{ width: '60px', backgroundColor: '#7c4dff', height: '2px' }} />
-                <p>
-                  Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </p>
               </div>
               {/* Grid column */}
               <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                <h6 className="text-uppercase fw-bold">Products</h6>
+                <h6 className="text-uppercase fw-bold">Contact</h6>
                 <hr className="mb-4 mt-0 d-inline-block mx-auto" style={{ width: '60px', backgroundColor: '#7c4dff', height: '2px' }} />
-                <p><a href="#!" className="text-white">MDBootstrap</a></p>
-                <p><a href="#!" className="text-white">MDWordPress</a></p>
-                <p><a href="#!" className="text-white">BrandFlow</a></p>
-                <p><a href="#!" className="text-white">Bootstrap Angular</a></p>
+                <p><a href="#!" className="text-white">ABOUT US</a></p>
+                <p><a href="#!" className="text-white">TRACK ORDER</a></p>
+                <p><a href="#!" className="text-white">CAREER</a></p>
               </div>
               {/* Grid column */}
               <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
