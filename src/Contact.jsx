@@ -1,9 +1,10 @@
 import React from 'react'
-
+import Office from './Office'
 function Contact() {
   return (
-    <div>Contact</div>
-  )
+  <>
+  <Office></Office>
+   </>  )
 }
 
 export default Contact

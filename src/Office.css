@@ -1,0 +1,45 @@
+body {
+    background-color: #000;
+  }
+  
+  .contact-box {
+    background-color: #212121;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    color: #fff;
+  }
+  
+  .contact-box h4,
+  .contact-box h5 {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  
+  .contact-box i {
+    font-size: 18px;
+    color: #e50914; /* KFC red color */
+  }
+  
+  .icon-text {
+    display: flex;
+    align-items: center;
+  }
+  
+  .row-custom {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Ensure responsiveness */
+  }
+  
+  .col-custom {
+    margin: 10px;
+    flex: 0 0 30%; /* Adjust width to fit three columns on one line */
+  }
+  
+  .col-custom-half {
+    margin: 10px;
+    flex: 0 0 48%; /* Adjust width to fit two columns on one line */
+  }
+  
