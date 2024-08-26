@@ -3,7 +3,9 @@ import Menubar from './Menubar.jsx'
 
 function Menu() {
   return (
+    <>
     <Menubar></Menubar>
+    </>
 )
 }
 

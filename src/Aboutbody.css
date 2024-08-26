@@ -1,43 +1,71 @@
-.about-title {
-    color: #fff;
-    font-family: National2CondensedBold;
-    font-family: var(--theam-font);
-    font-size: 30px;
-    font-weight: 600;
-    margin-bottom: 35px;
+/* Aboutbody.css */
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: #333; /* Optional: Set a background color for contrast */
+    margin: 0;
+    padding: 0;
+}
+
+/* General container for the about section */
+.about-section {
+    padding: 40px;
+    background-color: #222; /* Optional: Background color for the section */
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* Title styling */
+.title-about {
+    font-size: 3rem;
+    font-weight: bold;
     text-align: center;
-    padding-top: 20px;
+    margin-bottom: 20px;
 }
-.about-kfc {
-    background: #212121;
-    border-radius: 5px;
-    padding: 35px;
-    width: 100%;
-    color: #fff;
-    height: 200px;
+
+/* About shop text styling */
+.about-shop {
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: justify; /* Optional: Align text for readability */
 }
-.kfc-quality
-{
-  color: #C92B5B;
-  width: 100%;
-  height: 200px;
-  padding-bottom: 10%;
-  margin: auto;
-  padding: auto;
+
+/* Rules heading */
+.rules {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
 }
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: calc(var(--bs-gutter-x)* .5);
-    padding-right: calc(var(--bs-gutter-x)* .5);
-    width: 100%;
-    color: wheat;
-    padding-bottom: 20px;
+
+/* Rules text */
+.rules-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: justify;
 }
-@media (min-width: 576px) {
-    .container, .container-sm {
-        max-width: 540px;
-    }
+
+/* Unordered list styling */
+ul {
+    list-style-type: decimal;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.8;
+    padding-left: 40px; /* Indents the list */
+    margin-bottom: 30px;
+}
+
+/* Strong text styling */
+strong {
+    font-weight: bolder;
+    color: white;
+    text-indent: 20px; /* Adds an indent to the start of the first line */
+    display: block;
+    margin-bottom: 10px;
 }

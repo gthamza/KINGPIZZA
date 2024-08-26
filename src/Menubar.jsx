@@ -3,6 +3,7 @@ import './Menubar.css';
 
 function Menubar() {
   return (
+    <>
     <div className="menu-container">
       <button className="menu-button">Every Day</button>
       <button className="menu-button">ALa-Carte-&-Combos</button>
@@ -11,7 +12,8 @@ function Menubar() {
       <button className="menu-button">Sharing</button>
       <button className="menu-button">Midnight(Start at 12am)</button>
     </div>
-    
+
+</>
   );
 }
 
