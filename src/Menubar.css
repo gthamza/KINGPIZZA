@@ -1,0 +1,34 @@
+body
+{
+    background-color:#212529;
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+  }
+  
+  .menu-button {
+    padding: 6px 12px;
+    background-color: #C92B5B; 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    cursor: pointer;
+    transition: none;
+  }
+  
+  .menu-button:focus {
+    outline: 2px solid #9f1239; 
+    outline-offset: 4px;
+    background-color: #e11d48; 
+  }
+  

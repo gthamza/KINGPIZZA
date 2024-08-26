@@ -62,6 +62,8 @@ function Topdeals() {
                   alt={item.description} 
                 />
               </div>
+
+              
               <div className="card-body p-0">
                 <div className="d-flex justify-content-between align-items-center">
                   <h5 className="card-title">{item.title}</h5>

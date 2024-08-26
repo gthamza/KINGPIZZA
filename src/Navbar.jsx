@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Navbar() {
   return (
-    <div className="nav-container">
+    <div className="nav-container sticky-top">
       <img src={logo} alt='logo' className="logo" />
       <ul className="nav justify-content-center">
         <li className="nav-item">

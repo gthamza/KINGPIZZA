@@ -14,7 +14,7 @@ function Aboutbody() {
         <div className="row">
           <article className="col-lg-7 col-md-6">
             <p>
-              KFC entered Pakistan in 1997 and since then, it’s been a journey full of excitement and Finger Lickin’ goodness! The first KFC restaurant opened in Gulshan Iqbal, Karachi and now our Finger Lickin’ Chicken is available in 37 cities with over 128 restaurants! Being the most loved fast food chain in Pakistan, KFC leaves no stone unturned to provide its customers the most delicious chicken and an excellent dining experience.
+              MR PIZZA entered Pakistan in 1997 and since then, it’s been a journey full of excitement and Finger Lickin’ goodness! The first MR PIZZA restaurant opened in Gulshan Iqbal, Karachi and now our Finger Lickin’ Chicken is available in 37 cities with over 128 restaurants! Being the most loved fast food chain in Pakistan, MR PIZZA leaves no stone unturned to provide its customers the most delicious chicken and an excellent dining experience.
             </p>
           </article>
           <aside className="col-lg-5 col-md-6">
@@ -25,10 +25,10 @@ function Aboutbody() {
         </div>
       </section>
       <div className="container">
-        <div className="kfc-bhook">
+        <div className="MR PIZZA-bhook">
           <center><img src={logo} alt="MitaoBhook" /><h1>MR PIZZA</h1></center>
           <p>
-            is KFC’s pledge to give back to society. Over the years we have made it our mission to spread the message of hope, bringing positive change in the lives of people and providing better living standards. Mitao Bhook strengthens the community on the pillars of Education, Inclusion &amp; Diversity.
+            is MR PIZZA’s pledge to give back to society. Over the years we have made it our mission to spread the message of hope, bringing positive change in the lives of people and providing better living standards. Mitao Bhook strengthens the community on the pillars of Education, Inclusion &amp; Diversity.
           </p>
         </div>
       </div>

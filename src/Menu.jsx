@@ -1,9 +1,10 @@
 import React from 'react'
+import Menubar from './Menubar.jsx'
 
 function Menu() {
   return (
-    <div>Menu</div>
-  )
+    <Menubar></Menubar>
+)
 }
 
-export default Menu;
+export default Menu
