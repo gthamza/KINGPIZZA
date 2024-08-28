@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './Navbar'; 
-import Home from './Home'; 
-import Menu from './Menu'; 
-import About from './About';
-import Contact from './Contact'; 
-import Footer from './Footer'; 
+import Navbar from './components/Navbar'; 
+import Home from './pages/Home'; 
+import Menu from './pages/Menu'; 
+import About from './pages/About';
+import Contact from './pages/Contact'; 
+import Footer from './components/Footer'; 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

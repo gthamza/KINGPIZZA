@@ -1,8 +1,8 @@
 import Carousel from 'react-bootstrap/Carousel';
-import ExampleCarouselImage from './ExampleCarouselImage';
-import slider from './assets/slider.jpg';
-import slider1 from './assets/slider1.jpg';
-import slider3 from './assets/slider3.jpg';
+import ExampleCarouselImage from '../components/ExampleCarouselImage';
+import slider from '../assets/slider.jpg';
+import slider1 from '../assets/slider1.jpg';
+import slider3 from '../assets/slider3.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 

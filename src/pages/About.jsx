@@ -1,5 +1,5 @@
 import React from 'react'
-import Aboutbody from './Aboutbody';
+import Aboutbody from '../components/Aboutbody.jsx';
 
 function About() {
   return (

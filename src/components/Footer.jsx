@@ -1,9 +1,9 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Footer.css';
-import fb from './assets/fb.svg';
-import yt from './assets/yt.svg';
-import insta from './assets/instagram.svg';
+import '../components/Footer.css';
+import fb from '../assets/fb.svg';
+import yt from '../assets/yt.svg';
+import insta from '../assets/instagram.svg';
 
 const SocialMediaLink = ({ href, imgSrc, altText }) => (
   <a href={href}>
