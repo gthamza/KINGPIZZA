@@ -1,0 +1,71 @@
+/* Aboutbody.css */
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: #333; /* Optional: Set a background color for contrast */
+    margin: 0;
+    padding: 0;
+}
+
+/* General container for the about section */
+.about-section {
+    padding: 40px;
+    background-color: #222; /* Optional: Background color for the section */
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* Title styling */
+.title-about {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* About shop text styling */
+.about-shop {
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: justify; /* Optional: Align text for readability */
+}
+
+/* Rules heading */
+.rules {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Rules text */
+.rules-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+/* Unordered list styling */
+ul {
+    list-style-type: decimal;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.8;
+    padding-left: 40px; /* Indents the list */
+    margin-bottom: 30px;
+}
+
+/* Strong text styling */
+strong {
+    font-weight: bolder;
+    color: white;
+    text-indent: 20px; /* Adds an indent to the start of the first line */
+    display: block;
+    margin-bottom: 10px;
+}

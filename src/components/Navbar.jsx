@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from "./assets/logo.svg";
-import cart from "./assets/cart.svg";
-import './Navbar.css';
+import logo from "../assets/logo.svg";
+import cart from "../assets/cart.svg";
+import '../components/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Navbar() {
   return (
-    <div className="nav-container">
+    <div className="nav-container sticky-top">
       <img src={logo} alt='logo' className="logo" />
       <ul className="nav justify-content-center">
         <li className="nav-item">

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './Topdeals.css';
-import deal from './assets/deal1.png';
-import deal2 from './assets/deal2.png';
-import deal3 from './assets/deal3.png';
-import deal4 from './assets/deal4.png';
+import '../components/Topdeals.css';
+import deal from '../assets/deal1.png';
+import deal2 from '../assets/deal2.png';
+import deal3 from '../assets/deal3.png';
+import deal4 from '../assets/deal4.png';
 
 function Topdeals() {
   const [popup, setPopup] = useState({ isVisible: false, deal: null });
@@ -62,6 +62,8 @@ function Topdeals() {
                   alt={item.description} 
                 />
               </div>
+
+              
               <div className="card-body p-0">
                 <div className="d-flex justify-content-between align-items-center">
                   <h5 className="card-title">{item.title}</h5>

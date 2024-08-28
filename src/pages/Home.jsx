@@ -1,8 +1,8 @@
 import React from 'react';
-import Slider from './Slider'; 
-import Menucards from './Menucards';
-import Bestseller from './Bestseller';
-import Topdeals from './Topdeals';
+import Slider from '../components/Slider'; 
+import Menucards from '../components/Menucards';
+import Bestseller from '../components/Bestseller';
+import Topdeals from '../components/Topdeals';
 
 function Home() {
   return (

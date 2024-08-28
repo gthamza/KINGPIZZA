@@ -1,5 +1,5 @@
 import React from 'react'
-import Office from './Office'
+import Office from '../components/Office'
 function Contact() {
   return (
   <>

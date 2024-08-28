@@ -1,4 +1,4 @@
-body
+ body
 {
     background-color: #1c1c1c;
 }
@@ -40,4 +40,11 @@ body
   
   button:hover::before {
     width: 200%;
+  } 
+   
+  .social-logo {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
   }
+  
