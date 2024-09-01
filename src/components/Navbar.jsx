@@ -5,6 +5,8 @@ import cart from "../assets/cart.svg";
 import '../components/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+
 function Navbar() {
   return (
     <div className="nav-container sticky-top">

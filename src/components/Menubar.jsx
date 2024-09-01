@@ -2,16 +2,18 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Menubar.css';
 
+
+
 function Menubar() {
   const navigate = useNavigate();
 
   // Handler functions for each button
   const handleEveryDayClick = () => {
-    navigate('/every-day');
+    navigate('/Everydayvalue');
   };
 
   const handleALaCarteCombosClick = () => {
-    navigate('/a-la-carte-combos');
+    navigate('/');
   };
 
   const handlePromotionClick = () => {
