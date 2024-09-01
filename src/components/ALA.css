@@ -1,0 +1,60 @@
+.everyday {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Align cards to the left */
+  padding: 1rem;
+  background-color: #1C1C1C;
+}
+
+.card {
+  width: 16rem; /* Adjusted the width to make the card smaller */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 20px; /* Border-radius for a more rounded shape */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Ensures content respects the rounded corners */
+  background-color: #2a2a2a; /* Background color for the card */
+}
+
+.card img {
+  border-top-left-radius: 20px; /* Ensure image respects rounded corners */
+  border-top-right-radius: 20px;
+}
+
+.card-body {
+  padding: 1rem;
+  display: flex; /* Use flexbox for centering */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700; 
+  color: #fff;
+}
+
+.card-text {
+  color: #ccc; 
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.btn-primary {
+  background-color: #C92B5B; 
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: 600; 
+  margin-top: 1rem; 
+  padding: 0.5rem 1rem; 
+  border-radius: 5px; 
+}
+
+.btn-primary:hover {
+  background-color: #A0204C; 
+  color: #fff; 
+}

@@ -1,0 +1,57 @@
+.everyday {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1rem;
+    background-color: #1C1C1C;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 25px; /* Increased border-radius for more rounded shape */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensures the content inside respects the rounded corners */
+  }
+  
+  /* Card hover effect */
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Button styling */
+  .btn-primary {
+    background-color: #C92B5B; /* Button background color */
+    color: #fff; /* White text color */
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Button hover effect */
+  .btn-primary:hover {
+    background-color: #A0204C; /* Darker red background on hover */
+    color: #fff; /* White text on hover */
+  }
+  
+  .menu-title {
+    color: #fff;
+    font-family: var(--theam-font, National2CondensedBold);
+    font-size: 34px;
+    font-weight: 600;
+    padding-inline: 15px;
+    position: relative;
+    text-transform: uppercase;
+    display: inline-block; /* Make the title's width only as wide as the text */
+  }
+  
+  .menu-title::after {
+    content: "";
+    display: block;
+    width: 100%; /* Make the underline as wide as the text */
+    height: 2px;
+    background-color: #C92B5B;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+  }
+  

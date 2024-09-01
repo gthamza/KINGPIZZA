@@ -24,8 +24,8 @@ const cardsData = [
     link: '/menu'
   },
   {
-    title: 'Signature-Boxes',
-    image: 'https://www.kfcpakistan.com/images/afc536d0-ff99-11ed-a006-17c81341cbe8-Signaturebox-2023-05-31095826.png',
+    title: 'Everyday value',
+    image: 'https://www.kfcpakistan.com/images/12dd14f0-c523-11ee-a0b2-43ac3530dd54-KRUNCH-590X480-2024-02-06190812.png',
     link: '/menu'
   },
 ];
