@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../assets/logo.svg";
-import cart from "../assets/cart.svg";
+import cart from "../assets/cart.png";
 import '../components/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 function Navbar() {
   return (
@@ -23,7 +25,7 @@ function Navbar() {
           <Link className="nav-link" to="/contact">CONTACT</Link>
         </li>
       </ul>
-      <div className="cart-container">
+      <div className="cart-container ">
         <Link to="/cart">
           <img src={cart} alt="cart" className="logo" />
         </Link>

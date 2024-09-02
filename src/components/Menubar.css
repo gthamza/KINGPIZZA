@@ -10,6 +10,8 @@ body
     justify-content: center;
     gap: 10px;
     margin: 20px;
+    position: sticky;
+    position: -webkit-sticky;
   }
   
   .menu-button {

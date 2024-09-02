@@ -7,7 +7,7 @@
   }
   
   .logo {
-    margin-left: 10px;
+    margin-left: 34px;
   }
   
   .nav {
@@ -36,4 +36,7 @@
 
 .nav .nav-link.active {
     color: #f8f9fa;
+}
+.cart-container {
+  margin-right: 32px; /* Adjust the value as needed for a larger gap */
 }

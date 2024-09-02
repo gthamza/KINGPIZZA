@@ -4,7 +4,7 @@ import deal from '../assets/deal1.png';
 import deal2 from '../assets/deal2.png';
 import deal3 from '../assets/deal3.png';
 import deal4 from '../assets/deal4.png';
-
+import TopModal from './TopModel';
 function Topdeals() {
   const [popup, setPopup] = useState({ isVisible: false, deal: null });
 
@@ -62,8 +62,6 @@ function Topdeals() {
                   alt={item.description} 
                 />
               </div>
-
-              
               <div className="card-body p-0">
                 <div className="d-flex justify-content-between align-items-center">
                   <h5 className="card-title">{item.title}</h5>
@@ -93,25 +91,12 @@ function Topdeals() {
         ))}
       </div>
 
-      {popup.isVisible && (
-        <div className="popup-overlay" onClick={hidePopup}>
-          <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-            <div className="popup-header">
-              <h3>{popup.deal.title}</h3>
-              <button className="close-popup" onClick={hidePopup}>×</button>
-            </div>
-            <div className="popup-body">
-              <img src={popup.deal.imgSrc} alt={popup.deal.description} className="popup-img" />
-              <p>{popup.deal.description}</p>
-              <h4>{popup.deal.price}</h4>
-            </div>
-            <div className="popup-footer">
-              <button className="rgeister-btn Add-web px-2">Confirm Add to bucket</button>
-              <button className="close-popup-btn" onClick={hidePopup}>Close</button>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Render the modal and pass the necessary props */}
+      <TopModal 
+        isOpen={popup.isVisible} 
+        onClose={hidePopup} 
+        product={popup.deal} 
+      />
     </div>
   );
 }
