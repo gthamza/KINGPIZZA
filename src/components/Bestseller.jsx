@@ -22,7 +22,7 @@ function Bestseller() {
       name: 'KRUNCH COMBO',
       price: '570',
       image: 'https://www.kfcpakistan.com/images/43a9fb50-ffaa-11ed-8180-812e571998fe-crunch-with-fries-and-drink-2023-05-31115706.png',
-      description: 'Krunch Burger, fries, and a drink.'
+      description: 'KRUNCH BURGER, FRIES, AND A DRINK.'
     },
     {
       name: 'HOT WINGS BUCKET',
@@ -34,7 +34,7 @@ function Bestseller() {
       name: 'MIGHTY ZINGER',
       price: '750',
       image: 'https://www.kfcpakistan.com/images/33685b40-0461-11ee-911c-497570899609-Mighty_variant_0-2023-06-06115641.png',
-      description: 'Double Zinger fillet with mayo, lettuce, and cheese, in a sesame seed bun.'
+      description: 'DOUBLE ZINGER FILLET WITH MAYO, LETTUCE, AND CHEESE, IN A SESAME SEED BUN.'
     }
   ];
 
