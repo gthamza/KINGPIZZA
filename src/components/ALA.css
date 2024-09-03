@@ -35,7 +35,8 @@
 }
 
 .card-text {
-  color: #ccc; 
+  color: #f7efef; 
+  font-style: bold;
 }
 
 .card:hover {

@@ -8,29 +8,27 @@
   
   .card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 25px; /* Increased border-radius for more rounded shape */
+    border-radius: 25px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* Ensures the content inside respects the rounded corners */
+    overflow: hidden;
   }
   
-  /* Card hover effect */
   .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
   }
   
-  /* Button styling */
   .btn-primary {
-    background-color: #C92B5B; /* Button background color */
-    color: #fff; /* White text color */
+    background-color: #C92B5B;
+    color: #fff; 
     border: none;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
   
-  /* Button hover effect */
+
   .btn-primary:hover {
-    background-color: #A0204C; /* Darker red background on hover */
-    color: #fff; /* White text on hover */
+    background-color: #A0204C; 
+    color: #fff; 
   }
   
   .menu-title {
@@ -41,13 +39,13 @@
     padding-inline: 15px;
     position: relative;
     text-transform: uppercase;
-    display: inline-block; /* Make the title's width only as wide as the text */
+    display: inline-block; 
   }
   
   .menu-title::after {
     content: "";
     display: block;
-    width: 100%; /* Make the underline as wide as the text */
+    width: 100%; 
     height: 2px;
     background-color: #C92B5B;
     position: absolute;
