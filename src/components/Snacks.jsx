@@ -113,13 +113,10 @@ function Snacks() {
       }, 
   ];
 
-
-  // Function to show the modal
   const showPopup = (item) => {
     setPopup({ isVisible: true, deal: item });
   };
 
-  // Function to hide the modal
   const hidePopup = () => {
     setPopup({ isVisible: false, deal: null });
   };
