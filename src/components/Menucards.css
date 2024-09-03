@@ -19,7 +19,6 @@
     margin: 10px auto 0;
   }
   
-  /* Flexbox layout for the row containing cards */
   .row {
     display: flex;
     justify-content: space-between;
@@ -29,14 +28,12 @@
     scrollbar-color: #222;
   }
   
-  /* Card column settings */
   .col-md-4 {
     flex: 0 0 auto;
     width: 260px;
     position: relative;
   }
   
-  /* Card styling */
   .card.menu-card {
     background-color: transparent;
     border: none;
@@ -48,19 +45,16 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  /* Card hover effect */
   .card.menu-card:hover {
-    transform: scale(1.1);
+    transform: scale(1.4);
   }
   
-  /* Styling for images within the cards */
   .card.menu-card img {
     width: 100%;
     border-radius: 50%;
     transition: transform 0.3s ease;
   }
   
-  /* Card title styling */
   .card-title {
     color: #ffffff;
     font-size: 18px;
@@ -68,7 +62,6 @@
     font-weight: bold;
   }
   
-  /* Red underline beneath card titles */
   .card-body::after {
     content: '';
     display: block;
@@ -85,27 +78,26 @@
     padding: 0 10px;
   }
   
-  /* Firefox scrollbar color */
+  
   .row {
-    scrollbar-color: #212121 #222; /* thumb and track color */
-    scrollbar-width: thin; /* Set scrollbar width to thin */
+    scrollbar-color: #212121 #222; 
+    scrollbar-width: thin; 
   }
   
-  /* WebKit (Chrome, Safari) scrollbar styling */
   .row::-webkit-scrollbar {
-    width: 12px; /* Width of the scrollbar */
+    width: 12px;
   }
   
   .row::-webkit-scrollbar-track {
-    background: #212121; /* Track color */
+    background: #212121; 
   }
   
   .row::-webkit-scrollbar-thumb {
-    background: #212121; /* Thumb color */
-    border-radius: 10px; /* Rounded corners for the thumb */
+    background: #212121; 
+    border-radius: 10px; 
   }
   
   .row::-webkit-scrollbar-thumb:hover {
-    background: #212121; /* Thumb color on hover */
+    background: #212121; 
   }
   

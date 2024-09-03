@@ -8,20 +8,20 @@ function Midnight() {
     const items = [
         {
           name: 'Midnight Deal 1',
-          price: '490',
+          price: 'RS 490',
           image: 'https://www.kfcpakistan.com/images/43a95f10-ffaa-11ed-b673-4121381f04c6-Midnight-Deal-1-2023-05-31115706.png',
           description: '1 Zinger burger + 1 regular drink',
         },
         {
             name: 'Midnight Deal 2',
-            price: '590',
+            price: 'RS 590',
             image: 'https://www.kfcpakistan.com/images/43a9fb50-ffaa-11ed-8180-812e571998fe-Mightnight-2-2023-05-31115706.png',
             description: '2 Krunch burgers and + 2 regular drinks',
           },
 
           {
             name: 'Midnight Deal 3',
-            price: '690',
+            price: 'RS 690',
             image: 'https://www.kfcpakistan.com/images/43a95f10-ffaa-11ed-b673-4121381f04c6-midnight-deal-3-2023-05-31115706.png',
             description: 'Mighty Zinger + Regular drink',
           },
@@ -37,7 +37,8 @@ function Midnight() {
             <Card.Body>
               <Card.Title>{item.name}</Card.Title>
               <Card.Text>{item.description}</Card.Text>
-              <Button>Add to Bucket - {item.price}</Button>
+              <Card.Title>{item.price}</Card.Title>
+              <Button>Add to Bucket </Button>
             </Card.Body>
           </Card>
         ))}

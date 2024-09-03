@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import zinger from '../assets/zingeratha.png'; 
@@ -10,7 +10,7 @@ import chicken from '../assets/Krunch_combo.png';
 import pcs from '../assets/3pcs.png';
 import chickenchips from '../assets/chickenchips.png';
 import Boneless from '../assets/Boneless.png';
-
+import TopModal from './Mdeverydayvalue'; // Ensure this is the correct import
 import './Everydayvalue.css';
 
 const items = [
@@ -78,9 +78,22 @@ const items = [
 ];
 
 function Everydayvalue() {
+  // State to manage modal visibility and selected item
+  const [popup, setPopup] = useState({ isVisible: false, deal: null });
+
+  // Function to show the modal with the selected item
+  const showPopup = (item) => {
+    setPopup({ isVisible: true, deal: item });
+  };
+
+  // Function to hide the modal
+  const hidePopup = () => {
+    setPopup({ isVisible: false, deal: null });
+  };
+
   return (
     <>
-     <center> <h1 className='menu-title'>EVERYDAY VALUE</h1></center>
+      <center><h1 className='menu-title'>EVERYDAY VALUE</h1></center>
 
       <div className="everyday">
         {items.map((item, index) => (
@@ -88,14 +101,22 @@ function Everydayvalue() {
             <Card.Img variant="top" src={item.image} />
             <Card.Body>
               <Card.Title>{item.title}</Card.Title>
-              <Card.Text>
-                {item.text}
-              </Card.Text>
-              <Button>Add to Bucket - {item.price}</Button>
+              <Card.Text>{item.text}</Card.Text>
+              <Card.Title>{item.price}</Card.Title>
+              <Button onClick={() => showPopup(item)}>Add to Bucket</Button>
             </Card.Body>
           </Card>
         ))}
       </div>
+
+      {/* Render the modal and pass the necessary props */}
+      {popup.isVisible && (
+        <TopModal 
+          isOpen={popup.isVisible} 
+          onClose={hidePopup} 
+          product={popup.deal} 
+        />
+      )}
     </>
   );
 }
