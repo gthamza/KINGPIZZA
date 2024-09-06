@@ -10,7 +10,9 @@ import '../pages/Cart.jsx';
 function Navbar() {
   return (
     <div className="nav-container sticky-top">
+      <Link className='nav-link' to='/'>
       <img src={logo} alt='logo' className="logo" />
+      </Link>
       <ul className="nav justify-content-center">
         <li className="nav-item">
           <Link className="nav-link" to="/">HOME</Link>

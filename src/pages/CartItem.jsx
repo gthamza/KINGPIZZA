@@ -10,7 +10,7 @@ function CartItem({ item }) {
 
   return (
     <>
-      <Card className="cart-item-card mb-3" style={{ width: '100%', maxWidth: '700px' }}>
+      <Card className="cart-item-card mb-3 ml-80" style={{ width: '100%', maxWidth: '500px' }}>
         <Card.Body className="d-flex align-items-center">
           <div className="cart-product-img me-3">
             <img src={item.product.image} alt={item.product.name} style={{ maxWidth: '100px' }} />
