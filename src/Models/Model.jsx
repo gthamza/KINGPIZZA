@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import '../Models/Model.css';
 import { CircleX } from 'lucide-react';
-import '../components/StackModal.css';
+import { useCart } from '../pages/CardContext';
 
-
-const TopModal = ({ isOpen, onClose, product }) => {
+const Modal = ({ isOpen, onClose, product }) => {
   const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCart(); // Get addToCart function from context
+  const navigate = useNavigate(); // Initialize useNavigate hook
 
   const handleDecrease = () => {
     if (quantity > 1) setQuantity(quantity - 1);
@@ -12,6 +15,12 @@ const TopModal = ({ isOpen, onClose, product }) => {
 
   const handleIncrease = () => {
     setQuantity(quantity + 1);
+  };
+
+  const handleAddToCart = () => {
+    addToCart(product, quantity);
+    onClose(); // Optionally close the modal after adding to cart
+    navigate('/cart'); // Navigate to the cart page
   };
 
   if (!isOpen || !product) return null;
@@ -28,7 +37,7 @@ const TopModal = ({ isOpen, onClose, product }) => {
           <div className="option">
             <label>Choose an option</label>
             <select>
-              <option>{product.name} + {product.price}</option>
+              <option>{product.name} + Rs {product.price}</option>
             </select>
           </div>
         </div>
@@ -38,12 +47,14 @@ const TopModal = ({ isOpen, onClose, product }) => {
           <button onClick={handleIncrease}>+</button>
         </div>
         <div className="price-section">
-          <span>{product.price}</span>
-          <button className="add-to-bucket-btn">Add to Bucket</button>
+          <span>RS {product.price}</span>
+          <button className="add-to-bucket-btn" onClick={handleAddToCart}>
+            Add to Bucket
+          </button>
         </div>
       </div>
     </div>
   );
 };
 
-export default TopModal;
+export default Modal;
