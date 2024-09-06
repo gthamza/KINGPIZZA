@@ -2,17 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Cart.css';
 import { useCart } from '../pages/CardContext';  
-import CartItem from './CartItem'; // Import the CartItem component
+import CartItem from './CartItem';
 
 function Cart() {
   const { cartItems } = useCart(); 
   const emptyBasket = cartItems.length === 0;
 
   // Calculate total amount
-  const totalAmount = cartItems.reduce((total, item) => total + parseInt(item.product.price.replace('Rs', '')) * item.quantity, 0);
+  const totalAmount = cartItems.reduce(
+    (total, item) => 
+      total + parseInt(item.product.price.replace(/[^0-9]/g, '')) * item.quantity, 
+    0
+  );
 
   return (
-    <div className="container">
+    <div className="container cart-page">
       {emptyBasket ? (
         <div className="text-center">
           <img className="sadimg" src="path/to/empty-cart-image.png" alt="Empty Cart" />
@@ -21,46 +25,31 @@ function Cart() {
         </div>
       ) : (
         <>
-          <div className="related-products-section">
-            <h2>NEW IN STORE</h2>
-            <div className="related-products-cart">
-              {/* Add related products dynamically */}
-              <div className="related-product">
-                <img src="path/to/product-image.jpg" alt="Related Product" />
-                <p>Product Name</p>
-                <p>Rs. 999</p>
-              </div>
-            </div>
+          <h1 className="cart-title text-center mb-4">Your Cart</h1>
+          <div className="cart-items">
+            {cartItems.map((item, index) => (
+              <CartItem key={index} item={item} />
+            ))}
           </div>
-          
-          <div className="row">
-            <div className="col-md-8">
-              <div className="cart-table mb-70">
-                <table id="myTable">
-                  <thead>
-                    <tr>
-                      <th scope="col">PRODUCT</th>
-                      <th className="totalth" scope="col"></th>
-                      <th className="totalth" scope="col">Total</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {cartItems.map((item, index) => (
-                      <CartItem key={index} item={item} /> // Use CartItem component
-                    ))}
-                  </tbody>
-                </table>
-              </div>
 
-              <div className="total-amount">
-                <h3>Total: Rs {totalAmount}</h3>
-              </div>
-
-              <div className="checkout-section">
-                <Link to="/checkout" className="btn btn-success">Proceed to Checkout</Link>
-              </div>
-            </div>
+         <center> <div className="cart-checkout card">
+            <h3 className="cart-checkout-title text-white">Order Summary</h3>
+            <table className="cart-checkout-table">
+              <tbody>
+                <tr className="trr">
+                  <td>Subtotal</td>
+                  <td className="text-right">Rs {totalAmount}</td>
+                </tr>
+                {/* Add more summary rows if needed */}
+                <tr className="trr">
+                  <td>Total</td>
+                  <td className="text-right"><strong>Rs {totalAmount}</strong></td>
+                </tr>
+              </tbody>
+            </table>
+            <Link to="/checkout" className="checkout-button btn btn-success">Proceed to Checkout</Link>
           </div>
+          </center>
         </>
       )}
     </div>

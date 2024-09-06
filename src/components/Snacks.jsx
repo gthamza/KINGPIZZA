@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import './ALA.css';
-import TopModal from '../Models/StackModal'; // Ensure this path is correct
+import TopModal from '../Models/StackModal';
+import { useNavigate } from 'react-router-dom';
+import { useCart } from '../pages/CardContext';
 
 function Snacks() {
+  const { addToCart } = useCart();  // Add items to the cart
   const [popup, setPopup] = useState({ isVisible: false, deal: null });
+  const navigate = useNavigate();  // Navigate after adding item to cart
 
   const items = [
     {
@@ -113,12 +117,21 @@ function Snacks() {
       }, 
   ];
 
+  // Show the modal with the clicked item
   const showPopup = (item) => {
+    console.log(item);  // Debugging: log the item to ensure it's being passed
     setPopup({ isVisible: true, deal: item });
   };
 
+  // Hide the modal
   const hidePopup = () => {
     setPopup({ isVisible: false, deal: null });
+  };
+
+  const handleAddToCart = (item, quantity) => {
+    addToCart(item, quantity);  // Add the selected item to the cart
+    hidePopup();
+    navigate('/cart');  // Redirect to cart page
   };
 
   return (
@@ -143,7 +156,8 @@ function Snacks() {
         <TopModal 
           isOpen={popup.isVisible} 
           onClose={hidePopup} 
-          product={popup.deal} 
+          product={popup.deal}  // Pass the selected product
+          onAddToCart={handleAddToCart} 
         />
       )}
     </>
