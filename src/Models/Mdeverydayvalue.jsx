@@ -22,7 +22,7 @@ const TopModal = ({ isOpen, onClose, product }) => {
           <CircleX size={32} color="white" />
         </button>
         <img className="modal-image" src={product.image} alt={product.name} />
-        <p className="modal-description">{product.description}</p>
+        <p className="modal-description">{product.text}</p>
         <div className="modal-options">
           <div className="option">
             <label>Choose an option</label>
