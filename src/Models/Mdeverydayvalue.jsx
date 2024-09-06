@@ -27,7 +27,7 @@ const TopModal = ({ isOpen, onClose, product }) => {
           <div className="option">
             <label>Choose an option</label>
             <select>
-              <option>{product.name} + Rs {product.price}</option>
+              <option>{product.name} +{product.price}</option>
             </select>
           </div>
         </div>

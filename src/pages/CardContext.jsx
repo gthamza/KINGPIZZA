@@ -1,22 +1,36 @@
 import React, { createContext, useContext, useState } from 'react';
 
-// Create context
+// Create Cart Context
 const CartContext = createContext();
 
-// Provide context
+export const useCart = () => useContext(CartContext);
+
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
-  const addToCart = (product, quantity) => {
-    setCartItems([...cartItems, { product, quantity }]);
+  const addToCart = (item, quantity) => {
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find((cartItem) => cartItem.product.name === item.name);
+      if (existingItem) {
+        return prevItems.map((cartItem) =>
+          cartItem.product.name === item.name
+            ? { ...cartItem, quantity: cartItem.quantity + quantity }
+            : cartItem
+        );
+      } else {
+        return [...prevItems, { product: item, quantity }];
+      }
+    });
+  };
+
+  // Add the removeFromCart function
+  const removeFromCart = (item) => {
+    setCartItems((prevItems) => prevItems.filter((cartItem) => cartItem.product.name !== item.name));
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );
 };
-
-// Custom hook for accessing the cart
-export const useCart = () => useContext(CartContext);
