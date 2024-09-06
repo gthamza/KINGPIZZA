@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Bestseller.css';
-import  Modal from './Model';
+import  Modal from '../Models/Model';
 
 function Bestseller() {
   const [isModalOpen, setIsModalOpen] = useState(false);

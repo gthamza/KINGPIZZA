@@ -4,7 +4,7 @@ import logo from "../assets/logo.svg";
 import cart from "../assets/cart.png";
 import '../components/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import '../pages/Cart.jsx';
 
 
 function Navbar() {
@@ -26,9 +26,9 @@ function Navbar() {
         </li>
       </ul>
       <div className="cart-container ">
-        <Link to="/cart">
-          <img src={cart} alt="cart" className="logo" />
-        </Link>
+      <Link to="/cart">
+  <img src={cart} alt="cart" className="logo" />
+</Link>
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './Model.css';
 import { CircleX } from 'lucide-react';
+import '../Models/Mdeverydayvalue.css'; 
 
-const Modal = ({ isOpen, onClose, product }) => {
+const TopModal = ({ isOpen, onClose, product }) => {
   const [quantity, setQuantity] = useState(1);
 
   const handleDecrease = () => {
@@ -19,7 +19,7 @@ const Modal = ({ isOpen, onClose, product }) => {
     <div className="modal-overlay">
       <div className="modal-container">
         <button className="close-btn" onClick={onClose}>
-          <CircleX size={32} color="white" /> {/* Increased size */}
+          <CircleX size={32} color="white" />
         </button>
         <img className="modal-image" src={product.image} alt={product.name} />
         <p className="modal-description">{product.description}</p>
@@ -30,7 +30,6 @@ const Modal = ({ isOpen, onClose, product }) => {
               <option>{product.name} + Rs {product.price}</option>
             </select>
           </div>
-          {/* Additional options if needed */}
         </div>
         <div className="quantity-selector">
           <button onClick={handleDecrease}>-</button>
@@ -46,4 +45,4 @@ const Modal = ({ isOpen, onClose, product }) => {
   );
 };
 
-export default Modal;
+export default TopModal;

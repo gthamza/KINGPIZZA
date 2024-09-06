@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CircleX } from 'lucide-react';
-import '../components/Mdeverydayvalue.css'; 
+import '../Models/StackModal.css';
+
 
 const TopModal = ({ isOpen, onClose, product }) => {
   const [quantity, setQuantity] = useState(1);
@@ -27,7 +28,7 @@ const TopModal = ({ isOpen, onClose, product }) => {
           <div className="option">
             <label>Choose an option</label>
             <select>
-              <option>{product.name} + Rs {product.price}</option>
+              <option>{product.name} + {product.price}</option>
             </select>
           </div>
         </div>
@@ -37,7 +38,7 @@ const TopModal = ({ isOpen, onClose, product }) => {
           <button onClick={handleIncrease}>+</button>
         </div>
         <div className="price-section">
-          <span>RS {product.price}</span>
+          <span>{product.price}</span>
           <button className="add-to-bucket-btn">Add to Bucket</button>
         </div>
       </div>

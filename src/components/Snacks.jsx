@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import './ALA.css';
-import TopModal from './StackModal'; // Ensure this path is correct
+import TopModal from '../Models/StackModal'; // Ensure this path is correct
 
 function Snacks() {
   const [popup, setPopup] = useState({ isVisible: false, deal: null });

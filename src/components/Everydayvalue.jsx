@@ -10,7 +10,7 @@ import chicken from '../assets/Krunch_combo.png';
 import pcs from '../assets/3pcs.png';
 import chickenchips from '../assets/chickenchips.png';
 import Boneless from '../assets/Boneless.png';
-import TopModal from './Mdeverydayvalue';
+import TopModal from '../Models/Mdeverydayvalue';
 import './Everydayvalue.css';
 
 const items = [
