@@ -7,13 +7,19 @@ import CartItem from './CartItem';
 function Cart() {
   const { cartItems } = useCart(); 
   const emptyBasket = cartItems.length === 0;
+  
+  // Flat shipping fee
+  const shippingFee = 50;  
 
-  // Calculate total amount
+  // Calculate total amount (before shipping)
   const totalAmount = cartItems.reduce(
     (total, item) => 
       total + parseInt(item.product.price.replace(/[^0-9]/g, '')) * item.quantity, 
     0
   );
+
+  // Calculate total with shipping fee
+  const totalWithShipping = totalAmount + shippingFee;
 
   return (
     <div className="container cart-page">
@@ -32,23 +38,35 @@ function Cart() {
             ))}
           </div>
 
-         <center> <div className="cart-checkout card">
-            <h3 className="cart-checkout-title text-white">Order Summary</h3>
-            <table className="cart-checkout-table">
-              <tbody>
-                <tr className="trr">
-                  <td>Subtotal</td>
-                  <td className="text-right">Rs {totalAmount}</td>
-                </tr>
-                {/* Add more summary rows if needed */}
-                <tr className="trr">
-                  <td>Total</td>
-                  <td className="text-right"><strong>Rs {totalAmount}</strong></td>
-                </tr>
-              </tbody>
-            </table>
-            <Link to="/checkout" className="checkout-button btn btn-success">Proceed to Checkout</Link>
-          </div>
+          <center> 
+            <div className="cart-checkout card">
+              <h3 className="cart-checkout-title text-white">Order Summary</h3>
+              <table className="cart-checkout-table">
+                <tbody>
+                  <tr className="trr">
+                    <td>Subtotal</td>
+                    <td className="text-right">Rs {totalAmount}</td>
+                  </tr>
+                  <tr className="trr">
+                    <td>Shipping</td>
+                    <td className="text-right">Rs {shippingFee}</td>
+                  </tr>
+                  <tr className="trr">
+                    <td>Total (incl. shipping)</td>
+                    <td className="text-right"><strong>Rs {totalWithShipping}</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+              <Link 
+                to={{
+                  pathname: "/Checkout",
+                  state: { cartItems, totalWithShipping, shippingFee },  // Passing state
+                }}
+                className="checkout-button btn btn-success"
+              >
+                Proceed to Checkout
+              </Link>
+            </div>
           </center>
         </>
       )}

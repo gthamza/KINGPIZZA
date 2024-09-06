@@ -1,0 +1,21 @@
+.container.checkout-page {
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .payment-method {
+    background-color: #040e18;
+    padding: 15px;
+    border: 1px solid #131010;
+  }
+  
+  .privacy-note {
+    background-color: #070e14;
+    padding: 10px;
+    border: 1px solid #212121;
+    margin-top: 20px;
+  }
+  
