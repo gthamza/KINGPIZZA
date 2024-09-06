@@ -4,10 +4,12 @@ import deal from '../assets/deal1.png';
 import deal2 from '../assets/deal2.png';
 import deal3 from '../assets/deal3.png';
 import deal4 from '../assets/deal4.png';
-import TopModal from './TopModel';
-function Topdeals() {
-  const [popup, setPopup] = useState({ isVisible: false, deal: null });
+import TopModal from '../components/TopModel';
 
+
+function Topdeals() {
+  
+  const [popup, setPopup] = useState({ isVisible: false, deal: null });
   const deals = [
     {
       id: 1,

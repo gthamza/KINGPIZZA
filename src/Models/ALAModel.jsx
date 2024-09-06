@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { CircleX } from 'lucide-react';
-import '../Models/Mdeverydayvalue.css'; 
+import '../Models/StackModal.css';
 
-const TopModal = ({ isOpen, onClose, product }) => {
+function ALAModel({ isOpen, product, onClose }) {
   const [quantity, setQuantity] = useState(1);
 
   const handleDecrease = () => {
@@ -19,15 +18,15 @@ const TopModal = ({ isOpen, onClose, product }) => {
     <div className="modal-overlay">
       <div className="modal-container">
         <button className="close-btn" onClick={onClose}>
-          <CircleX size={32} color="white" />
+          <span>X</span> {/* Adjust this if you have an SVG or icon */}
         </button>
         <img className="modal-image" src={product.image} alt={product.name} />
-        <p className="modal-description">{product.text}</p>
+        <p className="modal-description">{product.description}</p>
         <div className="modal-options">
           <div className="option">
             <label>Choose an option</label>
             <select>
-              <option>{product.name} + Rs {product.price}</option>
+              <option>{product.name} + {product.price}</option>
             </select>
           </div>
         </div>
@@ -37,12 +36,12 @@ const TopModal = ({ isOpen, onClose, product }) => {
           <button onClick={handleIncrease}>+</button>
         </div>
         <div className="price-section">
-          <span>RS {product.price}</span>
+          <span>{product.price}</span>
           <button className="add-to-bucket-btn">Add to Bucket</button>
         </div>
       </div>
     </div>
   );
-};
+}
 
-export default TopModal;
+export default ALAModel;

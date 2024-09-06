@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import './ALA.css';
+import PromotionModel from '../Models/PromotionModel';
 
 function Promotion() {
+  const [popup, setPopup] = useState({ isVisible: false, deal: null });
+
+  const showPopup = (deal) => {
+    setPopup({ isVisible: true, deal });
+  };
+
+  const hidePopup = () => {
+    setPopup({ isVisible: false, deal: null });
+  };
+
   const items = [
     {
       name: '3 Pcs chicken with Drink',
@@ -29,10 +40,17 @@ function Promotion() {
               <Card.Title>{item.name}</Card.Title>
               <Card.Text>{item.description}</Card.Text>
               <Card.Title>{item.price}</Card.Title>
-              <Button>Add to Bucket</Button>
+              <Button onClick={() => showPopup(item)}>Add to Bucket</Button>
             </Card.Body>
           </Card>
         ))}
+        {popup.isVisible && (
+          <PromotionModel 
+            isOpen={popup.isVisible} 
+            onClose={hidePopup} 
+            product={popup.deal} 
+          />
+        )}
       </div>
     </>
   );
