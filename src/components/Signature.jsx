@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import './ALA.css';
-
-
+import SignModel from '../Models/SignModel';
 
 function Signature() {
+  const [popup, setPopup] = useState({ isVisible: false, deal: null });
+
+  const showPopup = (deal) => {
+    setPopup({ isVisible: true, deal });
+  };
+
+  const hidePopup = () => {
+    setPopup({ isVisible: false, deal: null });
+  };
+
   const items = [
     {
       name: 'Crispy Box',
@@ -49,10 +58,17 @@ function Signature() {
               <Card.Title>{item.name}</Card.Title>
               <Card.Text>{item.description}</Card.Text>
               <Card.Title>{item.price}</Card.Title>
-              <Button>Add to Bucket</Button>
+              <Button onClick={() => showPopup(item)}>Add to Bucket</Button>
             </Card.Body>
           </Card>
         ))}
+        {popup.isVisible && (
+          <SignModel 
+            isOpen={popup.isVisible} 
+            onClose={hidePopup} 
+            product={popup.deal} 
+          />
+        )}
       </div>
     </>
   );

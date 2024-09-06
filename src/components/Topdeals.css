@@ -1,6 +1,6 @@
 
 .top-container {
-  max-width: 1200px;
+  max-width: 1230px;
   margin: 0 auto;
 }
 
@@ -88,9 +88,9 @@
   padding: 8px 16px;
   font-size: 0.9rem;
   font-weight: bold;
-  border-radius: 0; /* Removed rounded corners */
+  border-radius: 0; 
   cursor: pointer;
-  transition: none; /* Removed hover transition */
+  transition: none; 
 }
 
 .btn-item {
@@ -114,17 +114,14 @@
   }
 }
 
-/* Ensure the card has no border-radius */
 .card {
   border-radius: 0 !important;
 }
 
-/* If you want to ensure the image does not have rounded corners either */
 .card-img-top {
   border-radius: 0 !important;
 }
 
-/* If the card has any box-shadow or other styles affecting the shape, reset them as well */
 .card-body {
   border-radius: 0 !important;
 }
@@ -137,7 +134,6 @@
   font-weight: bold;
   border-radius: 0;
   cursor: pointer;
-  transition: none; /* Remove transition to prevent any hover effects */
+  transition: none; 
 }
 
-/* Remove the hover effect */
