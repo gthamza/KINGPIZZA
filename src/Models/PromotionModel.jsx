@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Model.css';
 
-function PromotionModel({ isOpen, product, onClose }) {
+function PromotionModel({ isOpen, product, onClose, onAddToCart }) {
   const [quantity, setQuantity] = useState(1);
 
   const handleDecrease = () => {
@@ -10,6 +10,12 @@ function PromotionModel({ isOpen, product, onClose }) {
 
   const handleIncrease = () => {
     setQuantity(quantity + 1);
+  };
+
+  const handleAddToCart = () => {
+    if (product) {
+      onAddToCart(product, quantity);  // Call the function passed via props
+    }
   };
 
   if (!isOpen || !product) return null;
@@ -37,7 +43,9 @@ function PromotionModel({ isOpen, product, onClose }) {
         </div>
         <div className="price-section">
           <span>{product.price}</span>
-          <button className="add-to-bucket-btn">Add to Bucket</button>
+          <button className="add-to-bucket-btn" onClick={handleAddToCart}>
+            Add to Bucket
+          </button>
         </div>
       </div>
     </div>

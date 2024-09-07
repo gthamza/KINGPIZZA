@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import TopModal from '../Models/Mdeverydayvalue';
+import TopModal from '../Models/Mdeverydayvalue';  // Ensure this is your modal component
 import './Everydayvalue.css';
+import { useCart } from '../pages/CardContext';
+import { useNavigate } from 'react-router-dom';  // Add this for navigation
 
 const items = [
   {
@@ -69,8 +71,9 @@ const items = [
 ];
 
 function Everydayvalue() {
-  // State to manage modal visibility and selected item
   const [popup, setPopup] = useState({ isVisible: false, deal: null });
+  const { addToCart } = useCart();  // Add items to the cart
+  const navigate = useNavigate();  // Add this for navigation
 
   // Function to show the modal with the selected item
   const showPopup = (item) => {
@@ -80,6 +83,13 @@ function Everydayvalue() {
   // Function to hide the modal
   const hidePopup = () => {
     setPopup({ isVisible: false, deal: null });
+  };
+
+  // Handle adding an item to the cart
+  const handleAddToCart = (item, quantity = 1) => {  // Default quantity to 1 if not provided
+    addToCart(item, quantity);
+    hidePopup();
+    navigate('/cart');  // Navigate to the cart after adding item
   };
 
   return (
@@ -100,12 +110,13 @@ function Everydayvalue() {
         ))}
       </div>
 
-      {/* Render the modal and pass the necessary props */}
+      {/* Render the modal for adding to cart */}
       {popup.isVisible && (
         <TopModal 
           isOpen={popup.isVisible} 
           onClose={hidePopup} 
           product={popup.deal} 
+          onAddToCart={handleAddToCart}  // Handle adding to cart through the modal
         />
       )}
     </>
