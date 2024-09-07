@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Model.css';
 
-function SignModel({ isOpen, product, onClose }) {
+function SignModel({ isOpen, product, onClose,onAddToCart }) {
   const [quantity, setQuantity] = useState(1);
 
   const handleDecrease = () => {
@@ -11,6 +11,13 @@ function SignModel({ isOpen, product, onClose }) {
   const handleIncrease = () => {
     setQuantity(quantity + 1);
   };
+  
+  const handleAddToCart = () => {
+    if (product) {
+      onAddToCart(product, quantity); 
+    }
+  };
+
 
   if (!isOpen || !product) return null;
 
@@ -38,7 +45,7 @@ function SignModel({ isOpen, product, onClose }) {
           </div>
           <div className="price-section">
             <span>{product.price}</span>
-            <button className="add-to-bucket-btn">Add to Bucket</button>
+            <button className="add-to-bucket-btn" onClick={handleAddToCart}>Add to Bucket</button>
           </div>
         </div>
       </div>

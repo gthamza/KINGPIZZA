@@ -2,14 +2,17 @@ import React, { useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import './ALA.css';
 import SignModel from '../Models/SignModel';
+import {useCart} from '../pages/CardContext';
+import {useNavigate} from 'react-router-dom';
 
 function Signature() {
+  const { addToCart } = useCart();  // Add items to the cart
   const [popup, setPopup] = useState({ isVisible: false, deal: null });
+  const navigate = useNavigate();
 
-  const showPopup = (deal) => {
-    setPopup({ isVisible: true, deal });
+  const showPopup = (item) => {
+    setPopup({ isVisible: true, deal: item });  // Correctly pass item here
   };
-
   const hidePopup = () => {
     setPopup({ isVisible: false, deal: null });
   };
@@ -47,6 +50,12 @@ function Signature() {
     },
   ];
 
+ 
+   const handleAddToCart = (item, quantity) => {
+    addToCart(item, quantity); 
+    hidePopup();  
+    navigate('/cart'); 
+  };
   return (
     <>
       <center><h1 className='menu-title'>SIGNATURE</h1></center>
@@ -67,6 +76,7 @@ function Signature() {
             isOpen={popup.isVisible} 
             onClose={hidePopup} 
             product={popup.deal} 
+            onAddToCart={handleAddToCart}  
           />
         )}
       </div>
