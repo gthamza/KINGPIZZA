@@ -3,7 +3,6 @@ import { useLocation, Link } from 'react-router-dom';
 import './Checkout.css';
 
 function Checkout() {
-  // Access cartItems, totalAmount, and shippingFee passed via Link
   const location = useLocation();
   const { cartItems, totalAmount, shippingFee } = location.state || { cartItems: [], totalAmount: 0, shippingFee: 0 };
 
@@ -11,7 +10,7 @@ function Checkout() {
     email: '',
     firstName: '',
     lastName: '',
-    country: 'Kyrgyzstan',
+    country: 'Pakistan',
     address: '',
   });
 

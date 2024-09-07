@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 import '../components/Topdeals.css';
-import deal from '../assets/deal1.png';
-import deal2 from '../assets/deal2.png';
-import deal3 from '../assets/deal3.png';
-import deal4 from '../assets/deal4.png';
 import TopModal from '../components/TopModel';
 
 
@@ -16,28 +12,28 @@ function Topdeals() {
       title: 'Twister Combo',
       description: 'Twister + 1 Regular fries + 1 Regular drink',
       price: 'Rs 690',
-      imgSrc: deal,
+      imgSrc: 'https://www.kfcpakistan.com/images/43a9fb50-ffaa-11ed-8180-812e571998fe-twister-combo-2023-05-31115706.png',
     },
     {
       id: 2,
       title: 'Zinger Stacker Combo',
       description: '1 Zinger Stacker + 1 Regular fries + 1 Regular drink',
       price: 'Rs 920',
-      imgSrc: deal2,
+      imgSrc: 'https://www.kfcpakistan.com/images/43a98620-ffaa-11ed-b6b3-6970cc1cd666-zingerstack-Combo-2023-05-31115706.png',
     },
     {
       id: 3,
       title: 'Crispy Duo Box',
       description: 'Turn up the fun with 5 pcs Hot & Crispy Chicken + 1 Large fries + 2 Regular drinks',
       price: 'Rs 1320',
-      imgSrc: deal3,
+      imgSrc: 'https://www.kfcpakistan.com/images/43a95f10-ffaa-11ed-b673-4121381f04c6-CrispyDuoBox-2023-05-31115706.png',
     },
     {
       id: 4,
       title: 'Family Festival 3',
       description: '4 Zinger burgers + 4 pcs Hot and Crispy Chicken + 2 Dinner rolls + 1.5 Liter drink',
       price: 'Rs 2550',
-      imgSrc: deal4,
+      imgSrc: 'https://www.kfcpakistan.com/images/43a9fb50-ffaa-11ed-8180-812e571998fe-family-Festivle-3-2023-05-31115706.png',
     },
   ];
 
@@ -51,7 +47,7 @@ function Topdeals() {
 
   return (
     <div className="top-container mb-5">
-      <h2 className="items-title"><span>TOP DEALS</span></h2>
+      <h2 className="items-title p-6"><span>TOP DEALS</span></h2>
       <div className="row borws-row">
         {deals.map((item) => (
           <div className="col-lg-3 col-md-4 col-6" key={item.id}>
@@ -93,7 +89,6 @@ function Topdeals() {
         ))}
       </div>
 
-      {/* Render the modal and pass the necessary props */}
       <TopModal 
         isOpen={popup.isVisible} 
         onClose={hidePopup} 

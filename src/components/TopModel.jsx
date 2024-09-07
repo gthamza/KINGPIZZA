@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { CircleX } from 'lucide-react';
-import { useCart } from '../pages/CardContext';  // Import Cart Context
+import { useCart } from '../pages/CardContext';  
 
 const TopModal = ({ isOpen, onClose, product }) => {
   const [quantity, setQuantity] = useState(1);
-  const { addToCart } = useCart();  // Get addToCart function from context
-
+  const { addToCart } = useCart();  
   const handleDecrease = () => {
     if (quantity > 1) setQuantity(quantity - 1);
   };
@@ -15,8 +14,8 @@ const TopModal = ({ isOpen, onClose, product }) => {
   };
 
   const handleAddToBucket = () => {
-    addToCart(product, quantity);  // Add product to cart with quantity
-    onClose();  // Close the modal after adding
+    addToCart(product, quantity);  
+    onClose(); 
   };
 
   if (!isOpen || !product) return null;
