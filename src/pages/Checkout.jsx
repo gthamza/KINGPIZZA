@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
 import './Checkout.css';
 
 function Checkout() {
   const location = useLocation();
+  const navigate = useNavigate();
   const { cartItems, totalAmount, shippingFee } = location.state || { cartItems: [], totalAmount: 0, shippingFee: 0 };
 
   const [formData, setFormData] = useState({
@@ -14,6 +15,8 @@ function Checkout() {
     address: '',
   });
 
+  const [orderPlaced, setOrderPlaced] = useState(false);  // State to manage order placement
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -22,7 +25,10 @@ function Checkout() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form Data Submitted:', formData);
-    // Implement form submission logic here
+    // Implement form submission logic here (e.g., API call)
+    setOrderPlaced(true);
+    // Redirect to thank you page or display message
+    setTimeout(() => navigate('/thank-you'), 2000); // Redirect after 2 seconds
   };
 
   // Total including shipping
@@ -34,7 +40,7 @@ function Checkout() {
 
       <div className="row">
         {/* Billing Form Section */}
-        <div className="col-md-6 ">
+        <div className="col-md-6">
           <h3 className='text-4xl'>Billing Details</h3>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
@@ -144,6 +150,15 @@ function Checkout() {
           </div>
         </div>
       </div>
+
+      {/* Display thank you message if order is placed */}
+      {orderPlaced && (
+        <div className="thank-you-message text-center mt-4">
+          <h2>Thank You for Shopping with Us!</h2>
+          <p>Your order has been placed successfully.</p>
+          <Link to="/menu" className="btn btn-primary">Continue Shopping</Link>
+        </div>
+      )}
     </div>
   );
 }
