@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
 
-// Create Cart Context
 const CartContext = createContext();
 
 export const useCart = () => useContext(CartContext);
@@ -23,7 +22,6 @@ export const CartProvider = ({ children }) => {
     });
   };
 
-  // Add the removeFromCart function
   const removeFromCart = (item) => {
     setCartItems((prevItems) => prevItems.filter((cartItem) => cartItem.product.name !== item.name));
   };

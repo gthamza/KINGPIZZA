@@ -41,7 +41,7 @@ function Bestseller() {
   return (
     <>
       <div className="container">
-        <h2 className="items-title">
+        <h2 className="items-title p-6">
           <span>BEST SELLERS</span>
         </h2>
         <div className="best-seller mt-4">

@@ -12,6 +12,7 @@ import NotFound from './pages/NotFound'; // 404 Page
 import { CartProvider } from './pages/CardContext'; // Import CartProvider
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Checkout from './pages/Checkout'; // Correct Checkout import
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} /> {/* Fixed this line */}
             <Route path="*" element={<NotFound />} /> 
           </Routes>
           <Footer /> 
