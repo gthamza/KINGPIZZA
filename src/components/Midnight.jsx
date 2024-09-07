@@ -2,9 +2,28 @@ import React, { useState } from 'react';
 import './ALA.css';
 import { Card, Button } from 'react-bootstrap';
 import MidnightModel from '../Models/MidnightModel';
+import { useNavigate } from 'react-router-dom';
+import { useCart } from '../pages/CardContext';
 
 function Midnight() {
+  const { addToCart } = useCart();  // Add items to the cart
   const [popup, setPopup] = useState({ isVisible: false, deal: null });
+  const navigate = useNavigate();  // Navigate after adding item to cart
+
+  const showPopup = (item) => {
+    setPopup({ isVisible: true, deal: item });  // Correctly pass item here
+  };
+
+  const hidePopup = () => {
+    setPopup({ isVisible: false, deal: null });
+  };
+
+  // Handle adding item to cart
+  const handleAddToCart = (item, quantity) => {
+    addToCart(item, quantity);  // Add the selected item to the cart
+    hidePopup();  // Close the popup
+    navigate('/cart');  // Redirect to the cart page
+  };
 
   const items = [
     {
@@ -26,14 +45,6 @@ function Midnight() {
       description: 'Mighty Zinger + Regular drink',
     },
   ];
-
-  const showPopup = (deal) => {
-    setPopup({ isVisible: true, deal });
-  };
-
-  const hidePopup = () => {
-    setPopup({ isVisible: false, deal: null });
-  };
 
   return (
     <>
@@ -57,6 +68,7 @@ function Midnight() {
           isOpen={popup.isVisible} 
           onClose={hidePopup} 
           product={popup.deal} 
+          onAddToCart={handleAddToCart}  
         />
       )}
     </>
