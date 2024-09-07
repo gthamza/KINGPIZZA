@@ -1,7 +1,6 @@
 import React from 'react';
 import { useCart } from '../pages/CardContext';  
 import { Card, Button } from 'react-bootstrap';
-import { Center } from '@chakra-ui/react';
 
 function CartItem({ item }) {
   const { removeFromCart } = useCart();  
