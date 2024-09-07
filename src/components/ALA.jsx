@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import './ALA.css';
 import { Card, Button } from 'react-bootstrap';
+import './ALA.css';
 import ALAModel from '../Models/ALAModel';
+import { useNavigate } from 'react-router-dom';
+import { useCart } from '../pages/CardContext';  
 
 function ALA() {
+  const { addToCart } = useCart();  
   const [popup, setPopup] = useState({ isVisible: false, deal: null });
+  const navigate = useNavigate();  
 
   const items = [
     {
@@ -65,6 +69,12 @@ function ALA() {
     setPopup({ isVisible: false, deal: null });
   };
 
+  const handleAddToCart = (item, quantity) => {
+    addToCart(item, quantity);  // Add the selected item to the cart
+    hidePopup();
+    navigate('/cart');  // Redirect to cart page
+  };
+
   return (
     <>
       <center><h1 className="menu-title">Ala-Carte-&-Combos</h1></center>
@@ -86,6 +96,7 @@ function ALA() {
           isOpen={popup.isVisible} 
           onClose={hidePopup} 
           product={popup.deal} 
+          onAddToCart={handleAddToCart}  // Pass the addToCart handler
         />
       )}
     </>
