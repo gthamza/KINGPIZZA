@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../Models/StackModal.css';
 
-function ALAModel({ isOpen, product, onClose }) {
+function ALAModel({ isOpen, product, onClose, onAddToCart }) {
   const [quantity, setQuantity] = useState(1);
 
   const handleDecrease = () => {
@@ -12,13 +12,17 @@ function ALAModel({ isOpen, product, onClose }) {
     setQuantity(quantity + 1);
   };
 
+  const handleAddToBucket = () => {
+    onAddToCart(product, quantity);  
+  };
+
   if (!isOpen || !product) return null;
 
   return (
     <div className="modal-overlay">
       <div className="modal-container">
         <button className="close-btn" onClick={onClose}>
-          <span>X</span> {/* Adjust this if you have an SVG or icon */}
+          <span>X</span> 
         </button>
         <img className="modal-image" src={product.image} alt={product.name} />
         <p className="modal-description">{product.description}</p>
@@ -37,7 +41,7 @@ function ALAModel({ isOpen, product, onClose }) {
         </div>
         <div className="price-section">
           <span>{product.price}</span>
-          <button className="add-to-bucket-btn">Add to Bucket</button>
+          <button className="add-to-bucket-btn" onClick={handleAddToBucket}>Add to Bucket</button>
         </div>
       </div>
     </div>
