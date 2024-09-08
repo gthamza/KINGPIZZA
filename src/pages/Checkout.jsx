@@ -25,13 +25,10 @@ function Checkout() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form Data Submitted:', formData);
-    // Implement form submission logic here (e.g., API call)
     setOrderPlaced(true);
-    // Redirect to thank you page or display message
-    setTimeout(() => navigate('/thank-you'), 2000); // Redirect after 2 seconds
+    setTimeout(() => navigate('/thank-you'), 3000); 
   };
 
-  // Total including shipping
   const totalWithShipping = totalAmount + shippingFee;
 
   return (
@@ -39,7 +36,6 @@ function Checkout() {
       <h1 className="text-center text-3xl">Checkout</h1>
 
       <div className="row">
-        {/* Billing Form Section */}
         <div className="col-md-6">
           <h3 className='text-4xl'>Billing Details</h3>
           <form onSubmit={handleSubmit}>
@@ -103,46 +99,7 @@ function Checkout() {
 
         {/* Order Summary Section */}
         <div className="col-md-6">
-          <h3>Order Summary</h3>
-          <table className="table">
-            <thead>
-              <tr>
-                <th>Product</th>
-                <th className="text-right">Subtotal</th>
-              </tr>
-            </thead>
-            <tbody>
-              {cartItems.map((item, index) => (
-                <tr key={index}>
-                  <td>{item.product.name} × {item.quantity}</td>
-                  <td className="text-right">Rs {parseInt(item.product.price.replace(/[^0-9]/g, '')) * item.quantity}</td>
-                </tr>
-              ))}
-              <tr>
-                <td>Subtotal</td>
-                <td className="text-right">Rs {totalAmount}</td>
-              </tr>
-              <tr>
-                <td>Shipping</td>
-                <td className="text-right">
-                  <span className="badge badge-warning">Rs {shippingFee}</span>
-                </td>
-              </tr>
-              <tr>
-                <td>Total</td>
-                <td className="text-right">
-                  <strong>Rs {totalWithShipping}</strong>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div className="payment-method">
-            <h3>Payment Method</h3>
-            <li>Cash of Delivery</li>
-          </div>
-
-          <div className="privacy-note mt-4">
+          <div className="privacy-note mt-4 ">
             <p>
               Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our{' '}
               <Link to="#">privacy policy</Link>.
