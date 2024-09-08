@@ -13,6 +13,7 @@ import { CartProvider } from './pages/CardContext'; // Import CartProvider
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Checkout from './pages/Checkout'; // Correct Checkout import
+import ThankYou from './pages/ThankYou'; // Import ThankYou page
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} /> {/* Fixed this line */}
+            <Route path="/thank-you" element={<ThankYou />} /> {/* Added ThankYou page */}
             <Route path="*" element={<NotFound />} /> 
           </Routes>
           <Footer /> 
