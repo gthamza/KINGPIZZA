@@ -15,7 +15,7 @@ body
   }
   
   .menu-button {
-    padding: 6px 12px;
+    padding: 6px 18px;
     background-color: #C92B5B; 
     color: white;
     border: none;
@@ -26,6 +26,7 @@ body
     position: relative;
     cursor: pointer;
     transition: none;
+    
   }
   
   .menu-button:focus {
