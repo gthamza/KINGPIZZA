@@ -72,7 +72,7 @@ function ALA() {
   const handleAddToCart = (item, quantity) => {
     addToCart(item, quantity);  // Add the selected item to the cart
     hidePopup();
-    navigate('/cart');  // Redirect to cart page
+    navigate('/cart'); 
   };
 
   return (

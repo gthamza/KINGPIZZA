@@ -3,21 +3,19 @@
 body {
     font-family: Arial, sans-serif;
     color: white;
-    background-color: #333; /* Optional: Set a background color for contrast */
+    background-color: #333; 
     margin: 0;
     padding: 0;
 }
 
-/* General container for the about section */
 .about-section {
     padding: 40px;
-    background-color: #222; /* Optional: Background color for the section */
+    background-color: #222;
     border-radius: 10px;
     margin: 20px auto;
     max-width: 800px;
 }
 
-/* Title styling */
 .title-about {
     font-size: 3rem;
     font-weight: bold;
@@ -25,16 +23,14 @@ body {
     margin-bottom: 20px;
 }
 
-/* About shop text styling */
 .about-shop {
     font-size: 1.2rem;
     font-weight: bold;
     line-height: 1.6;
     margin-bottom: 30px;
-    text-align: justify; /* Optional: Align text for readability */
+    text-align: justify; 
 }
 
-/* Rules heading */
 .rules {
     font-size: 2rem;
     font-weight: bold;
@@ -42,7 +38,7 @@ body {
     text-align: center;
 }
 
-/* Rules text */
+
 .rules-text {
     font-size: 1.2rem;
     font-weight: bold;
@@ -51,21 +47,19 @@ body {
     text-align: justify;
 }
 
-/* Unordered list styling */
 ul {
     list-style-type: decimal;
     font-size: 1.2rem;
     font-weight: bold;
     line-height: 1.8;
-    padding-left: 40px; /* Indents the list */
+    padding-left: 40px;
     margin-bottom: 30px;
 }
 
-/* Strong text styling */
 strong {
     font-weight: bolder;
     color: white;
-    text-indent: 20px; /* Adds an indent to the start of the first line */
+    text-indent: 20px; 
     display: block;
     margin-bottom: 10px;
 }
