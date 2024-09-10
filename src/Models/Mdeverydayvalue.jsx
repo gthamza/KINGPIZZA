@@ -3,19 +3,16 @@ import { CircleX } from 'lucide-react';
 import '../Models/Mdeverydayvalue.css'; 
 
 const TopModal = ({ isOpen, onClose, product, onAddToCart }) => {
-  const [quantity, setQuantity] = useState(1); // Initial quantity set to 1
+  const [quantity, setQuantity] = useState(1);
 
-  // Decrease quantity, ensure it's not less than 1
   const handleDecrease = () => {
     if (quantity > 1) setQuantity(quantity - 1);
   };
 
-  // Increase quantity
   const handleIncrease = () => {
     setQuantity(quantity + 1);
   };
 
-  // If modal is not open or product is null, don't render anything
   if (!isOpen || !product) return null;
 
   return (

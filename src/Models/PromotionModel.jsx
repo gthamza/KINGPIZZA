@@ -14,7 +14,7 @@ function PromotionModel({ isOpen, product, onClose, onAddToCart }) {
 
   const handleAddToCart = () => {
     if (product) {
-      onAddToCart(product, quantity);  // Call the function passed via props
+      onAddToCart(product, quantity);  
     }
   };
 

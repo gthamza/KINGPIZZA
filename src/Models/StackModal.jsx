@@ -13,7 +13,6 @@ const TopModal = ({ isOpen, onClose, product, onAddToCart }) => {
     setQuantity(quantity + 1);
   };
 
-  // Ensure that the modal opens only if it is visible and product is passed
   if (!isOpen || !product) return null;
 
   return (
