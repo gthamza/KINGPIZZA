@@ -3,20 +3,21 @@ import { Card, Button } from 'react-bootstrap';
 import './ALA.css';
 import PromotionModel from '../Models/PromotionModel';
 import { useCart } from '../pages/CardContext';
-import { useNavigate } from 'react-router-dom';  // Import the hook
+import { useNavigate } from 'react-router-dom';  
 
 function Promotion() {
-  const { addToCart } = useCart();  // Add items to the cart
+  // using state for adding in cart
+  const { addToCart } = useCart();  
+  // use for making modal
   const [popup, setPopup] = useState({ isVisible: false, deal: null });
-  const navigate = useNavigate();  // Navigate after adding item to cart
+  // using to render cart.jsx
+  const navigate = useNavigate(); 
 
-  // Show popup when item is clicked
   const showPopup = (item) => {
-    console.log(item);  // Debugging: log the item to ensure it's being passed
-    setPopup({ isVisible: true, deal: item });  // Pass the selected item
+    console.log(item);  
+    setPopup({ isVisible: true, deal: item }); 
   };
 
-  // Hide popup after use
   const hidePopup = () => {
     setPopup({ isVisible: false, deal: null });
   };
@@ -36,11 +37,10 @@ function Promotion() {
     },
   ];
 
-  // Handle adding item to cart
   const handleAddToCart = (item, quantity) => {
-    addToCart(item, quantity);  // Add the selected item to the cart
-    hidePopup();  // Close the popup
-    navigate('/cart');  // Redirect to the cart page
+    addToCart(item, quantity);  
+    hidePopup(); 
+    navigate('/cart');  
   };
 
   return (
@@ -63,7 +63,7 @@ function Promotion() {
             isOpen={popup.isVisible} 
             onClose={hidePopup} 
             product={popup.deal} 
-            onAddToCart={handleAddToCart}  // Correct the prop to handle adding to the cart
+            onAddToCart={handleAddToCart}  
           />
         )}
       </div>
