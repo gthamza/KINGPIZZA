@@ -5,16 +5,15 @@ import cart from "../assets/cart.png";
 import '../components/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../pages/Cart.jsx';
-
+import '../pages/Home.jsx'
 
 function Navbar() {
   return (
     <div className="nav-container sticky-top">
-      <Link className='nav-link' to='/Home'>
+      <Link className='nav-link' to='/'>
       <img src={logo} alt='logo' className="logo" />
       </Link>
       <ul className="nav justify-content-center">
-        
         <li className="nav-item">
           <Link className="nav-link" to="/">HOME</Link>
         </li>
