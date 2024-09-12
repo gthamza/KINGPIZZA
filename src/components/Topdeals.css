@@ -137,3 +137,26 @@
   transition: none; 
 }
 
+.menu-title {
+  font-size: 45px; 
+  font-weight: bold;
+  color: white; 
+  background-color: #1C1C1C; 
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  margin-left: 55px;
+  padding-top: 30px;
+}
+
+.menu-title::after {
+  content: "";
+  display: block;
+  width: 270px; 
+  height: 6px; 
+  background-color: #d44b67; 
+  margin-top: 4px;
+ 
+}
+
