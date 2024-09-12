@@ -1,15 +1,26 @@
-import React, { useState } from 'react';
-import '../components/Topdeals.css';
+import React, { useState } from 'react'; 
+import { useNavigate } from 'react-router-dom'; 
+import Button from 'react-bootstrap/Button'; 
+import Card from 'react-bootstrap/Card';
+import { useCart } from '../pages/CardContext'; 
 import TopdealsModal from '../Models/TopdealsModal';
-import { useCart } from '../pages/CardContext';  
-import { useNavigate } from 'react-router-dom';
+import '../components/Topdeals.css'
+
 
 function Topdeals() {
-  const { addToCart } = useCart(); 
+  const { addToCart } = useCart();  
   const [popup, setPopup] = useState({ isVisible: false, deal: null });
   const navigate = useNavigate(); 
 
-  const items = [ 
+  const showPopup = (item) => {
+    setPopup({ isVisible: true, deal: item }); 
+  };
+
+  const hidePopup = () => {
+    setPopup({ isVisible: false, deal: null });
+  };
+
+  const items = [
     {
       id: 1,
       title: 'Twister Combo',
@@ -39,52 +50,38 @@ function Topdeals() {
       imgSrc: 'https://www.kfcpakistan.com/images/43a9fb50-ffaa-11ed-8180-812e571998fe-family-Festivle-3-2023-05-31115706.png',
     },
   ];
-
-  // Function to show the modal popup
-  const showPopup = (deal) => {
-    setPopup({ isVisible: true, deal });
-  };
-
-  // Function to hide the modal popup
-  const hidePopup = () => {
-    setPopup({ isVisible: false, deal: null });
-  };
-
-  // Function to handle adding to cart and navigating to the cart page
+    
   const handleAddToCart = (item, quantity) => {
-    addToCart(item, quantity);  // Add product to cart using context
-    hidePopup();  // Close the popup
-    navigate('/cart');  // Navigate to the cart page
+    addToCart(item, quantity);  
+    hidePopup(); 
+    navigate('/cart');  
   };
 
   return (
-    <div className="top-container mb-5">
-      <h2 className="items-title p-6"><span>TOP DEALS</span></h2>
-      <div className="row borws-row">
-        {items.map((item) => (  // Changed from deals.map() to items.map()
-          <div className="col-lg-3 col-md-4 col-6" key={item.id}>
-            <div className="card menu-card">
-              <img className="card-img-top card-img" src={item.imgSrc} alt={item.description} />
-              <div className="card-body p-0">
-                <h5 className="card-title">{item.title}</h5>
-                <h4 className="kfc-price">{item.price}</h4>
-                <button className="ri-add-line rgeister-btn Add-web px-2" onClick={() => showPopup(item)}>
-                  <span>Add to bucket</span>
-                </button>
-              </div>
-            </div>
-          </div>
+    <>
+      <h1 className='menu-title'>TOP DEALS</h1>
+      <div className="everyday">
+        {items.map((item) => (
+          <Card style={{ width: '18rem', margin: '1rem' }} key={item.id}>
+            <Card.Img variant="top" src={item.imgSrc} />
+            <Card.Body>
+              <Card.Title>{item.title}</Card.Title>
+              <Card.Text>{item.description}</Card.Text>
+              <Card.Title>{item.price}</Card.Title>
+              <Button onClick={() => showPopup(item)}>Add to Bucket</Button>
+            </Card.Body>
+          </Card>
         ))}
+        {popup.isVisible && (
+          <TopdealsModal 
+            isOpen={popup.isVisible} 
+            onClose={hidePopup} 
+            product={popup.deal} 
+            onAddToCart={handleAddToCart}  
+          />
+        )}
       </div>
-
-      {/* Modal for adding to cart */}
-      <TopdealsModal
-        isOpen={popup.isVisible}
-        onClose={hidePopup}
-        product={popup.deal}
-        onAddToCart={handleAddToCart}  
-      />
-    </div>
+    </>
   );
 }
 

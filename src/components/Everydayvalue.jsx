@@ -94,8 +94,9 @@ function Everydayvalue() {
 
   return (
     <>
-      <center><h1 className='menu-title'>EVERYDAY VALUE</h1></center>
-
+ <h2 className="items-title p-6">
+          <span>BEST SELLERS</span>
+        </h2>
       <div className="everyday">
         {items.map((item, index) => (
           <Card style={{ width: '18rem', margin: '1rem' }} key={index}>
