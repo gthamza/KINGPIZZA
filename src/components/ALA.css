@@ -1,22 +1,22 @@
 .everyday {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start; /* Align cards to the left */
+  justify-content: flex-start; 
   padding: 1rem;
   background-color: #1C1C1C;
 }
 
 .card {
-  width: 16rem; /* Adjusted the width to make the card smaller */
+  width: 16rem; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 20px; /* Border-radius for a more rounded shape */
+  border-radius: 20px; 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden; /* Ensures content respects the rounded corners */
-  background-color: #2a2a2a; /* Background color for the card */
+  overflow: hidden; 
+  background-color: #2a2a2a; 
 }
 
 .card img {
-  border-top-left-radius: 20px; /* Ensure image respects rounded corners */
+  border-top-left-radius: 20px; 
   border-top-right-radius: 20px;
 }
 
@@ -24,7 +24,7 @@
   padding: 1rem;
   display: flex; /* Use flexbox for centering */
   flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center items horizontally */
+  align-items: center; 
   justify-content: center; /* Center items vertically */
 }
 

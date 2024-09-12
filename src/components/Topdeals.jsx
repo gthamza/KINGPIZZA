@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import '../components/Topdeals.css';
-import TopModal from '../components/TopModel';
-
+import TopdealsModal from '../Models/TopdealsModal';
+import { useCart } from '../pages/CardContext';  
+import { useNavigate } from 'react-router-dom';
 
 function Topdeals() {
-  
+  const { addToCart } = useCart(); 
   const [popup, setPopup] = useState({ isVisible: false, deal: null });
-  const deals = [
+  const navigate = useNavigate(); 
+
+  const items = [ 
     {
       id: 1,
       title: 'Twister Combo',
@@ -37,62 +40,49 @@ function Topdeals() {
     },
   ];
 
+  // Function to show the modal popup
   const showPopup = (deal) => {
     setPopup({ isVisible: true, deal });
   };
 
+  // Function to hide the modal popup
   const hidePopup = () => {
     setPopup({ isVisible: false, deal: null });
+  };
+
+  // Function to handle adding to cart and navigating to the cart page
+  const handleAddToCart = (item, quantity) => {
+    addToCart(item, quantity);  // Add product to cart using context
+    hidePopup();  // Close the popup
+    navigate('/cart');  // Navigate to the cart page
   };
 
   return (
     <div className="top-container mb-5">
       <h2 className="items-title p-6"><span>TOP DEALS</span></h2>
       <div className="row borws-row">
-        {deals.map((item) => (
+        {items.map((item) => (  // Changed from deals.map() to items.map()
           <div className="col-lg-3 col-md-4 col-6" key={item.id}>
             <div className="card menu-card">
-              <div className="kfc-box"><span></span><span></span><span></span></div>
-              <div className="manu-img-item">
-                <img 
-                  className="card-img-top card-img" 
-                  src={item.imgSrc} 
-                  alt={item.description} 
-                />
-              </div>
+              <img className="card-img-top card-img" src={item.imgSrc} alt={item.description} />
               <div className="card-body p-0">
-                <div className="d-flex justify-content-between align-items-center">
-                  <h5 className="card-title">{item.title}</h5>
-                  <span>
-                    <button className="btn-item">
-                      <i className="ri-heart-line"></i>
-                    </button>
-                  </span>
-                </div>
-                <p className="card-text">{item.description}</p>
+                <h5 className="card-title">{item.title}</h5>
                 <h4 className="kfc-price">{item.price}</h4>
-                <div className="price-label">
-                  <button 
-                    className="ri-add-line rgeister-btn Add-web px-2" 
-                    onClick={() => showPopup(item)}>
-                    <span>Add to bucket</span>
-                  </button>
-                  <button 
-                    className="ri-add-line rgeister-btn Add-mobil px-2" 
-                    onClick={() => showPopup(item)}>
-                    <span>Add to bucket</span>
-                  </button>
-                </div>
+                <button className="ri-add-line rgeister-btn Add-web px-2" onClick={() => showPopup(item)}>
+                  <span>Add to bucket</span>
+                </button>
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      <TopModal 
-        isOpen={popup.isVisible} 
-        onClose={hidePopup} 
-        product={popup.deal} 
+      {/* Modal for adding to cart */}
+      <TopdealsModal
+        isOpen={popup.isVisible}
+        onClose={hidePopup}
+        product={popup.deal}
+        onAddToCart={handleAddToCart}  
       />
     </div>
   );
