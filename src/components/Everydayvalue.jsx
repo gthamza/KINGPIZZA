@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import TopModal from '../Models/Mdeverydayvalue';  // Ensure this is your modal component
-import './Everydayvalue.css';
 import { useCart } from '../pages/CardContext';
 import { useNavigate } from 'react-router-dom';  // Add this for navigation
+import './ALA.css';
 
 const items = [
   {
@@ -94,9 +94,7 @@ function Everydayvalue() {
 
   return (
     <>
- <h2 className="items-title p-6">
-          <span>BEST SELLERS</span>
-        </h2>
+      <center><h1 className="menu-title">EveryDay Value</h1></center>
       <div className="everyday">
         {items.map((item, index) => (
           <Card style={{ width: '18rem', margin: '1rem' }} key={index}>
