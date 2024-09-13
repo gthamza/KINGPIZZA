@@ -86,10 +86,10 @@ function Everydayvalue() {
   };
 
   // Handle adding an item to the cart
-  const handleAddToCart = (item, quantity = 1) => {  // Default quantity to 1 if not provided
+  const handleAddToCart = (item, quantity = 1) => {  
     addToCart(item, quantity);
     hidePopup();
-    navigate('/cart');  // Navigate to the cart after adding item
+    navigate('/cart');  
   };
 
   return (
