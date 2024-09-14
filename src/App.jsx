@@ -32,7 +32,6 @@ function App() {
             <Route path="/thank-you" element={<ThankYou />} /> 
             <Route path="*" element={<NotFound />} /> 
           </Routes>
-        
         </div>
         <Footer /> 
       </CartProvider>
