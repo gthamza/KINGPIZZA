@@ -63,7 +63,7 @@ function Topdeals() {
       <h1 className="menu-title">TOP DEALS</h1>
       <div className="everyday">
         {topDealsData.map((item, index) => (
-          <Card style={{ width: "18rem", margin: "1rem" }} key={index}>
+          <Card className="topdeal-card" key={index}>
             <Card.Img variant="top" src={item.image} />
             <Card.Body>
               <Card.Title>{item.name}</Card.Title>

@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { CircleX } from 'lucide-react';
-import { useCart } from '../pages/CardContext';  
+import { useState } from "react";
+import { CircleX } from "lucide-react";
+import { useCart } from "../pages/CardContext";
 
 const TopModal = ({ isOpen, onClose, product }) => {
   const [quantity, setQuantity] = useState(1);
-  const { addToCart } = useCart();  
+  const { addToCart } = useCart();
   const handleDecrease = () => {
     if (quantity > 1) setQuantity(quantity - 1);
   };
@@ -14,8 +14,8 @@ const TopModal = ({ isOpen, onClose, product }) => {
   };
 
   const handleAddToBucket = () => {
-    addToCart(product, quantity);  
-    onClose(); 
+    addToCart(product, quantity);
+    onClose();
   };
 
   if (!isOpen || !product) return null;
@@ -32,7 +32,9 @@ const TopModal = ({ isOpen, onClose, product }) => {
           <div className="option">
             <label>Choose an option</label>
             <select>
-              <option>{product.title} + {product.price}</option>
+              <option>
+                {product.title} + {product.price}
+              </option>
             </select>
           </div>
         </div>
@@ -43,7 +45,9 @@ const TopModal = ({ isOpen, onClose, product }) => {
         </div>
         <div className="price-section">
           <span>{product.price}</span>
-          <button className="add-to-bucket-btn" onClick={handleAddToBucket}>Add to Bucket</button>
+          <button className="add-to-bucket-btn" onClick={handleAddToBucket}>
+            Add to Bucket
+          </button>
         </div>
       </div>
     </div>
