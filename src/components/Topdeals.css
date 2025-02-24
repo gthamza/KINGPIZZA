@@ -1,6 +1,5 @@
-
 .top-container {
-  max-width: 1230px;
+  max-width: 1240px;
   margin: 0 auto;
 }
 
@@ -13,7 +12,7 @@
 }
 
 .items-title span {
-  border-bottom: 5px solid #C92B5B;
+  border-bottom: 5px solid #c92b5b;
 }
 
 .borws-row {
@@ -26,7 +25,7 @@
 .card {
   background-color: #212121;
   border: none;
-  border-radius: 0; 
+  border-radius: 0;
   padding: 15px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -44,14 +43,14 @@
 .kfc-box span {
   width: 10px;
   height: 10px;
-  background-color: #C92B5B;
+  background-color: #c92b5b;
   margin: 0 3px;
 }
 
 .manu-img-item img {
   width: 100%;
   height: auto;
-  border-radius: 0; 
+  border-radius: 0;
   object-fit: cover;
 }
 
@@ -82,21 +81,21 @@
 }
 
 .rgeister-btn {
-  background-color: #C92B5B;
+  background-color: #c92b5b;
   color: #fff;
   border: none;
   padding: 8px 16px;
   font-size: 0.9rem;
   font-weight: bold;
-  border-radius: 0; 
+  border-radius: 0;
   cursor: pointer;
-  transition: none; 
+  transition: none;
 }
 
 .btn-item {
   background: none;
   border: none;
-  color: #C92B5B;
+  color: #c92b5b;
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -126,7 +125,7 @@
   border-radius: 0 !important;
 }
 .rgeister-btn {
-  background-color: #C92B5B;
+  background-color: #c92b5b;
   color: #fff;
   border: none;
   padding: 8px 16px;
@@ -134,14 +133,14 @@
   font-weight: bold;
   border-radius: 0;
   cursor: pointer;
-  transition: none; 
+  transition: none;
 }
 
 .menu-title {
-  font-size: 45px; 
+  font-size: 45px;
   font-weight: bold;
-  color: white; 
-  background-color: #1C1C1C; 
+  color: white;
+  background-color: #1c1c1c;
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
@@ -153,10 +152,14 @@
 .menu-title::after {
   content: "";
   display: block;
-  width: 270px; 
-  height: 6px; 
-  background-color: #d44b67; 
+  width: 270px;
+  height: 6px;
+  background-color: #d44b67;
   margin-top: 4px;
- 
 }
-
+.menu-title {
+  justify-content: center;
+}
+.everyday {
+  margin-left: auto;
+}
