@@ -1,42 +1,72 @@
 .nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #212529;
-  }
-  
-  .logo {
-    margin-left: 34px;
-  }
-  
-  .nav {
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
-    gap: 30px; 
-    color: #C92B5B;
-  }
-  
-  .nav-link {
-    color: #C92B5B;
-    font-size: 04rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #212529;
+}
 
-  }
-  .nav-link:hover {
-    color: #A0224A; 
-  }
-  .nav .nav-link {
-    color: #C92B5B;
+.logo {
+  margin-left: 34px;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  gap: 30px;
+  color: #c92b5b;
+}
+
+.nav-link {
+  color: #c92b5b;
+  font-size: 04rem;
+}
+.nav-link:hover {
+  color: #a0224a;
+}
+.nav .nav-link {
+  color: #c92b5b;
 }
 
 .nav .nav-link:hover {
-    color: #A0224A;
+  color: #a0224a;
 }
 
 .nav .nav-link.active {
-    color: #f8f9fa;
+  color: #f8f9fa;
 }
 .cart-container {
-  margin-right: 32px; 
+  margin-right: 32px;
+}
+.cart-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cart-link {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-logo {
+  width: 40px; /* Adjust size as needed */
+  height: 40px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

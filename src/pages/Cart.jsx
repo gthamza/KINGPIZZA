@@ -1,22 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Cart.css';
-import { useCart } from '../pages/CardContext';  
-import CartItem from './CartItem';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Cart.css";
+import { useCart } from "../pages/CardContext";
+import CartItem from "./CartItem";
 
 function Cart() {
-  const { cartItems } = useCart(); 
+  const { cartItems } = useCart();
   const emptyBasket = cartItems.length === 0;
-  
+
   // Flat shipping fee
-  const shippingFee = 50;  
+  const shippingFee = 50;
 
   // Calculate total amount (before shipping)
-  const totalAmount = cartItems.reduce(
-    (total, item) => 
-      total + parseInt(item.product.price.replace(/[^0-9]/g, '')) * item.quantity, 
-    0
-  );
+  const totalAmount = cartItems.reduce((total, item) => {
+    const price =
+      typeof item.product.price === "string"
+        ? parseInt(item.product.price.replace(/[^0-9]/g, ""))
+        : item.product.price; // Use number directly if it's already a number
+
+    return total + price * item.quantity;
+  }, 0);
 
   // Calculate total with shipping fee
   const totalWithShipping = totalAmount + shippingFee;
@@ -25,9 +28,15 @@ function Cart() {
     <div className="container cart-page">
       {emptyBasket ? (
         <div className="text-center">
-          <img className="sadimg" src="path/to/empty-cart-image.png" alt="Empty Cart" />
+          <img
+            className="sadimg"
+            src="path/to/empty-cart-image.png"
+            alt="Empty Cart"
+          />
           <h2>Your cart is currently empty!</h2>
-          <Link to="/menu" className="btn btn-primary">Continue Shopping</Link>
+          <Link to="/menu" className="btn btn-primary">
+            Continue Shopping
+          </Link>
         </div>
       ) : (
         <>
@@ -38,7 +47,7 @@ function Cart() {
             ))}
           </div>
 
-          <center> 
+          <center>
             <div className="cart-checkout card">
               <h3 className="cart-checkout-title text-white">Order Summary</h3>
               <table className="cart-checkout-table">
@@ -53,14 +62,16 @@ function Cart() {
                   </tr>
                   <tr className="trr">
                     <td>Total (incl. shipping)</td>
-                    <td className="text-right"><strong>Rs {totalWithShipping}</strong></td>
+                    <td className="text-right">
+                      <strong>Rs {totalWithShipping}</strong>
+                    </td>
                   </tr>
                 </tbody>
               </table>
-              <Link 
+              <Link
                 to={{
                   pathname: "/Checkout",
-                  state: { cartItems, totalWithShipping, shippingFee },  // Passing state
+                  state: { cartItems, totalWithShipping, shippingFee }, // Passing state
                 }}
                 className="checkout-button btn btn-success"
               >
