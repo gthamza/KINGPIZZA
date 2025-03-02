@@ -31,7 +31,7 @@ function CartItem({ item }) {
         <div className="flex-grow-1">
           <h5 className="product-name">{item.product.name}</h5>
           <p className="d">{item.product.description}</p>
-          <p className="product-price-total">Price: Rs {price}</p>
+          <p className="product-price-total">{price}</p>
           <p className="product-quantity">Quantity: {item.quantity}</p>
         </div>
         <div>

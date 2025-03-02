@@ -37,12 +37,16 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-  // Calculate total items count
+  // 🆕 Function to clear the cart
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <CartContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, cartCount }}
+      value={{ cartItems, addToCart, removeFromCart, clearCart, cartCount }}
     >
       {children}
     </CartContext.Provider>

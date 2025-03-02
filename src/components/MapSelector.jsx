@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 import { Spinner } from "react-bootstrap";
 
 const containerStyle = {
@@ -12,42 +12,46 @@ const center = {
   lng: 69.11390292443679,
 };
 
+const googleMapsApiKey = "AIzaSyBiohy_1HfSjWgJBKgAs57BAHguyjH6bIU";
+
 // eslint-disable-next-line react/prop-types
 const MapSelector = ({ onLocationSelect }) => {
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey,
+  });
+
   const [markerPosition, setMarkerPosition] = useState(center);
   const [loading, setLoading] = useState(false);
 
   const handleMapClick = (event) => {
     setLoading(true);
-
     const newPosition = {
       lat: event.latLng.lat(),
       lng: event.latLng.lng(),
     };
     setMarkerPosition(newPosition);
     onLocationSelect(newPosition);
-
     setTimeout(() => setLoading(false), 1000);
   };
 
-  return (
-    <LoadScript googleMapsApiKey="AIzaSyBiohy_1HfSjWgJBKgAs57BAHguyjH6bIU">
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={14}
-        onClick={handleMapClick}
-      >
-        <Marker position={markerPosition} />
-      </GoogleMap>
+  if (!isLoaded) {
+    return (
+      <div className="text-center mt-2">
+        <Spinner animation="border" size="sm" />
+        <p>Loading Map...</p>
+      </div>
+    );
+  }
 
-      {loading && (
-        <div className="text-center mt-2">
-          <Spinner animation="border" size="sm" />
-          <p>Fetching location...</p>
-        </div>
-      )}
-    </LoadScript>
+  return (
+    <GoogleMap
+      mapContainerStyle={containerStyle}
+      center={center}
+      zoom={14}
+      onClick={handleMapClick}
+    >
+      <Marker position={markerPosition} />
+    </GoogleMap>
   );
 };
 
