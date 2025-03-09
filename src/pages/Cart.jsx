@@ -3,8 +3,7 @@ import { Modal, Button, Form } from "react-bootstrap";
 import axios from "axios";
 import { useCart } from "../pages/CardContext";
 import MapSelector from "../components/MapSelector";
-
-const API_URL = "http://localhost:5007"; // Replace with deployed API
+const API_URL = "https://blank-leeann-gtbot-2931d8db.koyeb.app/";
 
 function Cart() {
   const { cartItems, removeFromCart, clearCart } = useCart();
@@ -15,7 +14,7 @@ function Cart() {
   const [deliveryFee, setDeliveryFee] = useState(0);
   const [error, setError] = useState("");
   const [orderPlaced, setOrderPlaced] = useState(false);
-  const [cartVisible, setCartVisible] = useState(true); // State to hide cart
+  const [cartVisible, setCartVisible] = useState(true);
 
   const [userDetails, setUserDetails] = useState({
     name: "",
@@ -33,21 +32,24 @@ function Cart() {
 
   const handleCalculateDelivery = async () => {
     if (!location) {
-      setError("Please select a location on the map.");
+      setError("❌ Please select a location on the map.");
       return;
     }
     setError("");
 
     try {
-      const response = await axios.get(`${API_URL}/calculate-delivery`, {
+      const response = await axios.get(API_URL, {
         params: { latitude: location.lat, longitude: location.lng },
+        headers: { "Content-Type": "application/json" },
       });
+
+      console.log("API Response:", response.data);
       setDeliveryFee(response.data.deliveryPrice);
       setShowMapModal(false);
-      setShowModal(true); // Open user details modal after selecting location
+      setShowModal(true);
     } catch (err) {
-      console.log(err);
-      setError("Failed to fetch delivery price.");
+      console.error("Error fetching delivery fee:", err);
+      setError("❌ Failed to fetch delivery price. Please try again.");
     }
   };
 
@@ -62,17 +64,14 @@ function Cart() {
 
   const handleConfirmOrder = () => {
     if (!userDetails.name || !userDetails.email || !userDetails.phone) {
-      setError("All fields are required.");
+      setError("❌ All fields are required.");
       return;
     }
 
     setShowModal(false);
     setOrderPlaced(true);
-
-    // ✅ Clear the cart after order confirmation
     clearCart();
 
-    // ✅ Hide the cart container after 3 seconds
     setTimeout(() => {
       setCartVisible(false);
     }, 3000);
@@ -80,7 +79,7 @@ function Cart() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-6">
-      <h2 className="text-2xl font-bold">Your Cart</h2>
+      <h2 className="text-2xl font-bold">🛒 Your Cart</h2>
 
       {cartVisible && cartItems.length > 0 ? (
         <div className="bg-[#C92C5A] p-6 rounded-lg shadow-lg w-full max-w-lg">
@@ -96,22 +95,21 @@ function Cart() {
               />
               <div>
                 <h5 className="font-semibold">{item.product.name}</h5>
-                <p>Price: Rs {item.product.price}</p>
-                <p>Quantity: {item.quantity}</p>
+                <p>💰 Price: Rs {item.product.price}</p>
+                <p>🛍️ Quantity: {item.quantity}</p>
               </div>
               <Button
                 variant="danger"
                 className="ml-auto"
                 onClick={() => removeFromCart(item.product)}
               >
-                Remove
+                ❌ Remove
               </Button>
             </div>
           ))}
 
-          {/* 🧾 Bill Summary */}
           <div className="bg-[#1C1C1C] p-4 rounded-lg text-white mt-4">
-            <h4 className="text-lg font-bold">Bill Summary</h4>
+            <h4 className="text-lg font-bold">📜 Bill Summary</h4>
             <p>Subtotal: Rs {totalItemPrice}</p>
             <p>
               Delivery Fee: Rs {deliveryMode === "delivery" ? deliveryFee : 0}
@@ -120,19 +118,18 @@ function Cart() {
             <h5 className="text-xl font-bold">Total: Rs {finalTotal}</h5>
           </div>
 
-          {/* 🏷️ Buttons */}
           <div className="flex justify-between mt-4">
             <button
               className="bg-[#FE6F68] text-white px-4 py-2 rounded-md"
               onClick={() => handleProceed("pickup")}
             >
-              Pickup
+              🚶 Pickup
             </button>
             <button
               className="bg-[#FE6F68] text-white px-4 py-2 rounded-md"
               onClick={() => handleProceed("delivery")}
             >
-              Delivery
+              🚚 Delivery
             </button>
           </div>
         </div>
@@ -140,7 +137,6 @@ function Cart() {
         <p className="mt-4">Your cart is empty.</p>
       )}
 
-      {/* Thank You Message */}
       {orderPlaced && (
         <div className="text-center mt-4 bg-[#1C1C1C] p-4 rounded-md">
           <h3>🎉 Thank You for Shopping!</h3>
@@ -148,32 +144,30 @@ function Cart() {
         </div>
       )}
 
-      {/* Map Modal */}
       <Modal show={showMapModal} onHide={() => setShowMapModal(false)} centered>
         <Modal.Header closeButton>
-          <Modal.Title>Select Delivery Location</Modal.Title>
+          <Modal.Title>📍 Select Delivery Location</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <MapSelector onLocationSelect={setLocation} />
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={() => setShowMapModal(false)}>
-            Cancel
+            ❌ Cancel
           </Button>
           <Button
             variant="primary"
             onClick={handleCalculateDelivery}
             disabled={!location}
           >
-            Confirm Location & Get Delivery Fee
+            ✅ Confirm Location & Get Delivery Fee
           </Button>
         </Modal.Footer>
       </Modal>
 
-      {/* User Details Modal (Contains Confirmation Button) */}
       <Modal show={showModal} onHide={() => setShowModal(false)} centered>
         <Modal.Header closeButton>
-          <Modal.Title>Enter Your Details</Modal.Title>
+          <Modal.Title>📝 Enter Your Details</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -215,11 +209,10 @@ function Cart() {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={() => setShowModal(false)}>
-            Cancel
+            ❌ Cancel
           </Button>
-          {/* ✅ Order Confirmation Button */}
           <Button variant="success" onClick={handleConfirmOrder}>
-            Confirm Order
+            ✅ Confirm Order
           </Button>
         </Modal.Footer>
       </Modal>
